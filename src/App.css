@@ -159,7 +159,7 @@ li a {
   border-width: 0.1em;
   border-style: solid;
   border-color: #bb9161;
-  width: 11%;
+  width: 15%;
   height: 4%;
 }
 
@@ -170,8 +170,8 @@ li a {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  margin-left: 1.2em;
-  margin-top: 0.2em;
+  margin-left: 40%;
+  margin-top: 5%;
 }
 
 .flex-container {
@@ -205,12 +205,13 @@ li a {
 .product-info button {
   width: 35%;
   height: 5%;
-  margin-top: 2em;
+  margin-top: 5%;
   font-family: "Times New Roman", Times, serif;
   background-color: white;
   border-color: #bb9161;
   border-style: solid;
   color: #bb9161;
+  font-size: 0.6em;
 }
 
 .footer {

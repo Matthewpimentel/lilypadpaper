@@ -48,7 +48,7 @@ const Shop = () => {
       image: blank,
       price: 12,
       description:
-        "Add a bit of luxury and simplicity to your writing with our Lily Notes Notepad (lined or blank). Keeping all of your thoughts, notes and reminders close by. The perfect size for writing down to do lists, goals, don’t forgets, personal reflection and much more + it makes a very thoughtful gift. <br> 50 pages of high quality paper. 3.5” x 5.75” Exclusive to Lily Pad Paper & Co.",
+        "Add a bit of luxury and simplicity to your writing with our Lily Notes Notepad (lined or blank). Keeping all of your thoughts, notes and reminders close by. The perfect size for writing down to do lists, goals, don’t forgets, personal reflection and much more + it makes a very thoughtful gift. ",
       productInfo:
         "50 pages of high quality paper. 4” x 6” Exclusive to Lily Pad Paper & Co.",
     },
