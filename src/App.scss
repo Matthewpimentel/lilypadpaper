@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Dawning+of+a+New+Day&family=Poiret+One&display=swap");
+$title-font: "Dawning of a New Day", cursive;
+$default-font: "Poiret One", cursive;
+
+//Banner
 .banner {
   background-color: #bb9161;
   padding: 0.5em;
@@ -16,7 +20,7 @@
 }
 
 body {
-  font-family: "Poiret One", cursive;
+  font-family: $default-font;
 }
 
 ul {
@@ -39,7 +43,7 @@ li a {
 .title {
   margin-left: 1em;
   font-size: 2em;
-  font-family: "Dawning of a New Day", cursive;
+  font-family: $title-font;
   font-weight: 500;
 }
 
@@ -64,6 +68,8 @@ li a {
   margin-right: 5em;
 }
 
+//SHOP CSS
+
 .shop {
   display: block;
   text-align: center;
@@ -78,17 +84,10 @@ li a {
 }
 
 .card {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .product-container {
@@ -102,7 +101,7 @@ li a {
 }
 
 .title-product {
-  font-family: "Poiret One", cursive;
+  font-family: $default-font;
 }
 
 .product-info-blurb {
@@ -117,6 +116,8 @@ li a {
   background-position: center;
 }
 
+//PRODUCT INFO
+
 .product {
   display: block;
   margin-top: 3%;
@@ -127,16 +128,9 @@ li a {
 }
 
 .flex-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .flex-container img {
@@ -153,8 +147,6 @@ li a {
 }
 
 .quantity {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   border-width: 0.1em;
   border-style: solid;
@@ -166,34 +158,20 @@ li a {
 .quantity h1 {
   font-size: 1em;
   margin: 0;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
   margin-left: 1.2em;
   margin-top: 0.2em;
 }
 
 .flex-container {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 
 .quantity-flex-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
   width: 100%;
 }
 
@@ -213,6 +191,8 @@ li a {
   color: #bb9161;
 }
 
+//Footer
+
 .footer {
   position: fixed;
   width: 100%;
@@ -222,4 +202,3 @@ li a {
   color: white;
   padding: 0.5em;
 }
-/*# sourceMappingURL=App.css.map */
