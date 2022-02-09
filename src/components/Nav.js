@@ -1,46 +1,41 @@
 import logo from "../logo.png";
 import { BsBag } from "react-icons/bs";
-import Shop from "./Shop";
 import BannerMessage from "./BannerMessage";
 import React, { useState, useEffect, useContext } from "react";
+import { Outlet, Link } from "react-router-dom";
 const Nav = () => {
-  const [isShopActive, setShopActive] = useState("false");
-
-  const showShop = () => {
-    setShopActive(!isShopActive);
-  };
   return (
     <div className="nav">
       <BannerMessage />
       <ul>
         <li>
-          <a className="title" href="default.asp">
+          <Link className="title" to="/">
             Lily Pad Paper & Co
-          </a>
+          </Link>
         </li>
         <img className="logo" src={logo}></img>
         <div className="links">
           <li>
-            <a onClick={showShop} href="#shop">
-              Shop
-            </a>
+            <Link to="/shop">Shop</Link>
           </li>
           <li>
-            <a href="about.asp">About</a>
+            <Link to="/about">About</Link>
           </li>
           <li>
-            <a href="about.asp">Contact </a>
+            <a href="about.asp">PlaceHolder </a>
           </li>
           <li>
-            <BsBag
-              size={25}
-              className="shopping-bag"
-              style={{ cursor: "pointer" }}
-            />
+            <Link to="/cart">
+              <BsBag
+                size={25}
+                className="shopping-bag"
+                style={{ cursor: "pointer" }}
+              />
+            </Link>
           </li>
         </div>
       </ul>
-      {isShopActive == false && <Shop />}
+      <Outlet />
     </div>
   );
 };
