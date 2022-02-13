@@ -1,10 +1,11 @@
 import Items from "./Items";
 import React, { useState, useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
 import { FaArrowDown, FaArrowUp } from "react-icons/fa";
-const ProductInfo = (props) => {
+
+const ProductInfo = () => {
   const [quantity, setQuantity] = useState(1);
   const id = window.value;
-  console.log(id);
   const addToQuantity = () => {
     if (quantity < 10) {
       setQuantity(quantity + 1);
@@ -16,10 +17,16 @@ const ProductInfo = (props) => {
       setQuantity(quantity - 1);
     }
   };
+
+  const addToCart = () => {
+    window.quantity = quantity;
+    window.id = id;
+    window.quantity = quantity;
+  };
   return (
     <div className="product">
       {Items.map((val) => {
-        if (id == val.id)
+        if (val.id == id) {
           return (
             <div className="flex-container">
               <img className="img" src={val.image}></img>
@@ -44,12 +51,15 @@ const ProductInfo = (props) => {
                     />
                   </div>
                 </div>
-                <button>ADD TO CART</button>
+
+                <button onClick={addToCart}>ADD TO CART</button>
+
                 <p>{val.description}</p>
                 <p>{val.productInfo}</p>
               </div>
             </div>
           );
+        }
       })}
     </div>
   );

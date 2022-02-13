@@ -3,7 +3,10 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Shop from "./components/Shop";
 import ProductInfo from "./components/ProductInfo";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Cart from "./components/Cart";
+import Preorder from "./components/Preorder";
+import Home from "./components/Home";
 function App() {
   return (
     <div className="App">
@@ -12,12 +15,25 @@ function App() {
         content="width=device-width, initial-scale=1.0"
       ></meta>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Nav />}>
-            <Route path="shop" element={<Shop />} />
-            <Route path="productInfo" element={<ProductInfo id={Shop.id} />} />
+        <Nav />
+        <Switch>
+          <Route exact path={"/"}>
+            <Home />
           </Route>
-        </Routes>
+          <Route path={"/shop"}>
+            <Shop />
+          </Route>
+          <Route path={"/about"}></Route>
+          <Route path={"/cart"}>
+            <Cart />
+          </Route>
+          <Route path={"/productinfo"}>
+            <ProductInfo />
+          </Route>
+          <Route path={"/preorder"}>
+            <Preorder />
+          </Route>
+        </Switch>
       </BrowserRouter>
       <Footer />
     </div>

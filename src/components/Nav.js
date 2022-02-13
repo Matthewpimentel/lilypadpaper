@@ -2,12 +2,12 @@ import logo from "../logo.png";
 import { BsBag } from "react-icons/bs";
 import BannerMessage from "./BannerMessage";
 import React, { useState, useEffect, useContext } from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 const Nav = () => {
   return (
     <div className="nav">
       <BannerMessage />
-      <ul>
+      <ul className="nav-bar-headers">
         <li>
           <Link className="title" to="/">
             Lily Pad Paper & Co
@@ -35,7 +35,6 @@ const Nav = () => {
           </li>
         </div>
       </ul>
-      <Outlet />
     </div>
   );
 };

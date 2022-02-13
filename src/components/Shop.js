@@ -15,7 +15,7 @@ const Shop = () => {
         <div className="card">
           {Items.map((val) => {
             return (
-              <div className="product-container">
+              <div key={val.id} className="product-container">
                 <Link to="/productInfo">
                   <div
                     onClick={getDivId}
