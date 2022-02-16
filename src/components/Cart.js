@@ -1,79 +1,114 @@
 import Items from "./Items";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
+import { FiTrash } from "react-icons/fi";
 import { useState, useEffect } from "react";
+import StripeCheckout from "react-stripe-checkout";
 import items from "./Items";
-const Cart = (props) => {
-  let [cartId, setCartId] = useState([]);
-  const id = parseInt(window.id);
-  const quantity = parseInt(window.quantity);
-  const storedCart = JSON.parse(localStorage.getItem("storedCart"));
+const Cart = () => {
+  let divId;
 
-  const addId = () => {
-    setCartId([
-      {
-        ...cartId,
+  let cartFromStorage = JSON.parse(localStorage.getItem("cart"));
 
-        id: id,
-        quantity: quantity,
-      },
-    ]);
+  const [cartFromStorageState, setCartFromStorageState] =
+    useState(cartFromStorage);
+
+  const addToQuantity = (e) => {
+    for (let i = 0; i < cartFromStorage.length; i++) {
+      if (e.currentTarget.id == cartFromStorageState[i].id) {
+        const updateArray = [...cartFromStorageState];
+        updateArray[i].quantity += 1;
+        setCartFromStorageState(updateArray);
+        localStorage.clear();
+        localStorage.setItem("cart", JSON.stringify(updateArray));
+      }
+    }
   };
 
-  useEffect(() => {
-    addId();
-    cartId = storedCart;
-    console.log(cartId);
-    localStorage.clear();
-  }, []);
+  const subtractFromQuantity = (e) => {
+    for (let i = 0; i < cartFromStorage.length; i++) {
+      if (e.currentTarget.id == cartFromStorageState[i].id) {
+        const updateArray = [...cartFromStorageState];
+        updateArray[i].quantity -= 1;
+        setCartFromStorageState(updateArray);
+        localStorage.clear();
+        localStorage.setItem("cart", JSON.stringify(updateArray));
+      }
+    }
+  };
+
+  const removeItem = (e) => {
+    for (let i = 0; i < cartFromStorage.length; i++) {
+      if (e.currentTarget.id == cartFromStorageState[i].id) {
+        const updateArray = [...cartFromStorageState];
+        updateArray.splice(i, 1);
+        cartFromStorage.splice(i, 1);
+
+        setCartFromStorageState(updateArray);
+        localStorage.clear();
+        localStorage.setItem("cart", JSON.stringify(updateArray));
+      }
+    }
+  };
 
   return (
-    <div className="cart">
-      <div className="cart-headers">
-        <h1 className="blank-margin"></h1>
-        <h1>Description</h1>
-        <h1>Quantity</h1>
-        <h1>Remove</h1>
-        <h1>Price</h1>
-      </div>
+    <div>
+      <div className="cart">
+        <div className="cart-headers">
+          <h1 className="blank-margin"></h1>
+          <h1>Description</h1>
+          <h1>Quantity</h1>
+          <h1>Remove</h1>
+          <h1>Price</h1>
+        </div>
 
-      {Items.map((val) => {
-        for (let i = 0; i < cartId.length; i++) {
-          if (cartId[i].id == val.id) {
-            return (
-              <div key={val.id} className="cart-product">
-                <img src={val.image}></img>
-                <h1>{val.title}</h1>
-                <div className="cart-quantity">
-                  <div className="cart-plus-div">
-                    <AiOutlinePlus className="cart-plus" />
+        {Items.map((val) => {
+          if (localStorage.length > 0) {
+            for (let i = 0; i < cartFromStorageState.length; i++) {
+              if (cartFromStorageState[i].id == val.id) {
+                return (
+                  <div key={val.id} className="cart-product">
+                    <img src={val.image}></img>
+                    <h1>{val.title}</h1>
+                    <div className="cart-quantity">
+                      <div
+                        className="cart-plus-div"
+                        id={val.id}
+                        onClick={addToQuantity}
+                      >
+                        <AiOutlinePlus className="cart-plus" />
+                      </div>
+                      <div className="cart-spacer">
+                        <h1>{cartFromStorage[i].quantity}</h1>
+                      </div>
+                      <div
+                        className="cart-minus-div"
+                        id={val.id}
+                        onClick={subtractFromQuantity}
+                      >
+                        <AiOutlineMinus className="cart-minus" />
+                      </div>
+                    </div>
+
+                    <FiTrash
+                      id={val.id}
+                      onClick={removeItem}
+                      className="cart-trash"
+                      size={40}
+                    />
+
+                    <h1>ca${val.price * cartFromStorage[i].quantity}</h1>
                   </div>
-                  <div className="cart-spacer">
-                    <h1>{cartId[i].quantity}</h1>
-                  </div>
-                  <div className="cart-minus-div">
-                    <AiOutlineMinus className="cart-minus" />
-                  </div>
-                </div>
-                <h1>Place Holder</h1>
-                <h1>{val.price}</h1>
-              </div>
-            );
+                );
+              }
+            }
+          } else {
+            return <h1></h1>;
           }
-        }
-      })}
-
-      <h1>{window.id}</h1>
-
-      {/* {Items.map((val) => {
-          return (
-            <div className="cart-product-info">
-              <h1>{val.title}</h1>
-              <img src={val.image}></img>
-              <h1>dsa</h1>
-              <h1>{val.price}</h1>
-            </div>
-          );
-        })} */}
+        })}
+      </div>
+      <form action="create-checkout-session" method="POST">
+        <button type="submit">Checkout</button>
+      </form>
     </div>
   );
 };

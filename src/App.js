@@ -7,7 +7,12 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Cart from "./components/Cart";
 import Preorder from "./components/Preorder";
 import Home from "./components/Home";
+
 function App() {
+  const options = {
+    // passing the client secret obtained from the server
+    clientSecret: "{{CLIENT_SECRET}}",
+  };
   return (
     <div className="App">
       <meta
@@ -31,6 +36,9 @@ function App() {
             <ProductInfo />
           </Route>
           <Route path={"/preorder"}>
+            <Preorder />
+          </Route>
+          <Route path={"/terms"}>
             <Preorder />
           </Route>
         </Switch>

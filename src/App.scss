@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Dawning+of+a+New+Day&family=Poiret+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Dawning+of+a+New+Day&display=swap");
 $title-font: "Dawning of a New Day", cursive;
-$default-font: "Poiret One", cursive;
-$background-color: #bb9161;
+$default-font: "Cormorant Garamond", serif;
+$background-color: #e2c7aa;
 
 html,
 body {
@@ -81,7 +81,7 @@ body {
   margin-left: 3%;
   margin-right: 3%;
   text-align: center;
-  background-color: #bb9161;
+  background-color: $background-color;
   padding: 10px;
 }
 
@@ -310,6 +310,15 @@ h1 {
   color: black;
 }
 
+.cart-trash {
+  width: 25%;
+  color: $background-color;
+}
+
+form button {
+  float: right;
+}
+
 //Footer
 
 .footer {
@@ -317,7 +326,7 @@ h1 {
   width: 100%;
   bottom: 0;
   height: 10%;
-  background-color: #bb9161;
+  background-color: $background-color;
   color: white;
   padding: 0.5em;
 }
