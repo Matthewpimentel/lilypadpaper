@@ -1,4 +1,5 @@
 import Background from "../background.jpg";
+import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div>
@@ -16,9 +17,9 @@ const Home = () => {
           Our products are made of high quality paper, and are proudly designed
           and printed in Ontario.
         </h2>
-        <a href="/shop">
+        <Link to="/shop">
           <button>SHOP NOW</button>
-        </a>
+        </Link>
       </div>
     </div>
   );
