@@ -1,9 +1,8 @@
-import Items from "./Items";
+import Items from "./Items.js";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { FiTrash } from "react-icons/fi";
 import { useState, useEffect } from "react";
-import StripeCheckout from "react-stripe-checkout";
-import items from "./Items";
+
 const Cart = () => {
   let divId;
 
@@ -106,7 +105,17 @@ const Cart = () => {
           }
         })}
       </div>
-      <form action="create-checkout-session" method="POST">
+      <form method="POST" action="/create-checkout-session">
+        <input
+          type="hidden"
+          name="cart"
+          value={JSON.stringify(cartFromStorage)}
+        ></input>
+        <input
+          type="hidden"
+          name="products"
+          value={JSON.stringify(Items)}
+        ></input>
         <button type="submit">Checkout</button>
       </form>
     </div>

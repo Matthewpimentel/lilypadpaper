@@ -2,8 +2,6 @@ import Items from "./Items";
 import React, { useState } from "react";
 
 import { FaArrowDown, FaArrowUp } from "react-icons/fa";
-import Cart from "./Cart";
-import items from "./Items";
 
 const ProductInfo = () => {
   const [quantity, setQuantity] = useState(1);
@@ -13,7 +11,7 @@ const ProductInfo = () => {
   let flag = true;
   let storageFlag = true;
 
-  let itemsLength = items.length;
+  let itemsLength = Items.length;
 
   const addToQuantity = () => {
     if (quantity < 10) {
@@ -30,7 +28,7 @@ const ProductInfo = () => {
   const addToCart = () => {
     if (cartItems != undefined) {
       for (let i = 0; i < cartItems.length; i++) {
-        if (cartItems.length != 0 && cart.length < items.length) {
+        if (cartItems.length != 0 && cart.length < Items.length) {
           cart.push({ id: cartItems[i].id, quantity: cartItems[i].quantity });
         }
       }
@@ -62,10 +60,8 @@ const ProductInfo = () => {
               <div className="flex-container">
                 <img className="img" src={val.image}></img>
                 <div className="product-info">
-                  <h3>.{val.productNumber}</h3>
                   <h1>{val.title}</h1>
                   <h3>CA${val.price}</h3>
-                  <p>tax included</p>
                   <h3>quantity</h3>
                   <div className="quantity">
                     <h1>{quantity}</h1>

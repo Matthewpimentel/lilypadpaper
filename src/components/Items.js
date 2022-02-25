@@ -6,7 +6,6 @@ const items = [
   {
     id: 1,
     title: "lily notes, lined",
-    productNumber: "01",
     image: lined,
     price: 12,
     description:
@@ -17,7 +16,6 @@ const items = [
   {
     id: 2,
     title: "lily notes, blank",
-    productNumber: "02",
     image: blank,
     price: 12,
     description:
@@ -28,7 +26,6 @@ const items = [
   {
     id: 3,
     title: "weekly meal planner",
-    productNumber: "03",
     image: meal,
     price: 16,
     description:

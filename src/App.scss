@@ -8,6 +8,11 @@ body {
   height: 100%;
   font-family: $default-font;
   flex-wrap: wrap;
+  overflow: scroll;
+}
+
+html {
+  height: 100%;
 }
 
 //Banner
@@ -19,7 +24,7 @@ body {
 .banner-message {
   text-align: center;
   margin: 0;
-  font-size: 1em;
+  font-size: 1rem;
   color: white;
 }
 
@@ -44,7 +49,7 @@ body {
 
 .title {
   margin-left: 1em;
-  font-size: 2em;
+  font-size: 2rem;
   font-family: $title-font;
   font-weight: 500;
 }
@@ -63,7 +68,7 @@ body {
 
 .links a {
   margin-right: 5em;
-  font-size: 1.2em;
+  font-size: 1.2rem;
 }
 
 .shopping-bag {
@@ -115,7 +120,7 @@ body {
 .product-container {
   text-align: center;
   width: 30%;
-  font-size: 0.7em;
+  font-size: 0.7rem;
   min-height: 20vw;
   background-size: contain;
   background-repeat: no-repeat;
@@ -161,7 +166,7 @@ body {
 
 .product-info {
   width: 25%;
-  font-size: 1.3em;
+  font-size: 1.3rem;
 }
 
 .product-info p {
@@ -178,7 +183,7 @@ body {
 }
 
 .quantity h1 {
-  font-size: 1em;
+  font-size: 1rem;
   margin: 0;
   margin-left: 40%;
   margin-top: 5%;
@@ -206,7 +211,7 @@ body {
   border-color: $background-color;
   border-style: solid;
   color: $background-color;
-  font-size: 0.6em;
+  font-size: 0.6rem;
 }
 
 //cart
@@ -229,7 +234,7 @@ body {
 
 .cart-headers h1 {
   width: 25%;
-  font-size: 1.5em;
+  font-size: 1.5rem;
 }
 
 .cart-product {
@@ -243,7 +248,7 @@ body {
 
 .cart-product h1 {
   width: 25%;
-  font-size: 1.5em;
+  font-size: 1.5rem;
 }
 
 .cart-product img {
@@ -323,12 +328,10 @@ form button {
 
 .footer {
   position: fixed;
-  width: 100%;
   bottom: 0;
-  height: 10%;
+  width: 100%;
   background-color: $background-color;
   color: white;
-  padding: 0.5em;
 }
 
 .footer-links {
@@ -367,4 +370,97 @@ form button {
 
 .preorder ul {
   list-style: none;
+}
+
+@media (max-width: 480px) {
+}
+
+@media (max-width: 768px) {
+  .title {
+    margin-left: 0;
+    font-size: 0.9rem;
+  }
+
+  .links a {
+    margin-right: 0.6em;
+    font-size: 1rem;
+  }
+
+  .shopping-bag {
+    margin-right: 0;
+    width: 1rem;
+  }
+
+  .welcome-banner {
+    max-height: 100vw;
+  }
+
+  .welcome-banner h1 {
+    font-size: 1.5rem;
+  }
+
+  .welcome-banner h2 {
+    font-size: 1rem;
+  }
+
+  .footer-links a {
+    margin-bottom: 0.1em;
+    font-size: 0.7rem;
+  }
+
+  .card {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 150px;
+  }
+
+  .product-card {
+    min-height: 80vw;
+  }
+
+  .shop h1 {
+    margin-top: 0;
+  }
+
+  .flex-container {
+    padding-bottom: 150px;
+  }
+
+  .flex-container img {
+    max-width: 45%;
+    height: 100%;
+    margin-top: 20%;
+    margin-bottom: 20%;
+  }
+
+  .product-info {
+    width: 50%;
+  }
+
+  .product-info h1 {
+    font-size: 1.5rem;
+  }
+
+  .product-info h3 {
+    font-size: 1rem;
+  }
+
+  .quantity {
+    width: 50%;
+    height: 7%;
+  }
+
+  .product-info button {
+    width: 100%;
+  }
+
+  .product-info p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 1200px) {
 }

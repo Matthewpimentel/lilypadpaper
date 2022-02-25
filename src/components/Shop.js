@@ -1,7 +1,6 @@
-import ProductInfo from "./ProductInfo";
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import Items from "../components/Items";
+import Items from "./Items";
 
 const Shop = () => {
   const getDivId = (e) => {
