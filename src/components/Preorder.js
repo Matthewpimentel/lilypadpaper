@@ -3,10 +3,9 @@ const Preorder = () => {
     <div className="preorder">
       <h1>Pre-Order Items</h1>
       <p>
-        Pre-ordered items are not available to ship at the time of purchase.
-        Expected ship dates are noted in the product description for each
-        pre-order item. Please note that any order that includes a pre-order
-        item will not ship until all items are available.
+        Pre-ordered items are not available to ship at the time of purchase -
+        these items are available to ship once all items are received by Lily
+        Pad Paper & Co.
       </p>
       <p>
         Any unanticipated production delays for pre-order items do happen and we
@@ -22,7 +21,7 @@ const Preorder = () => {
         </li>
       </ul>
       <p>
-        Pre-orders are made available on selected products throughout the year
+        Pre-orders are made available on selected products throughout the year.
       </p>
     </div>
   );

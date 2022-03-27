@@ -101,6 +101,16 @@ html {
   padding: 0.75em;
 }
 
+.home-page-about {
+  text-align: center;
+  margin-left: 15vw;
+  margin-right: 15vw;
+}
+
+.home-page-about h1 {
+  font-family: "Dawning of a New Day", cursive;
+}
+
 .shop {
   display: block;
   text-align: center;
@@ -397,9 +407,9 @@ form button {
 }
 
 .footer {
-  position: fixed;
-  bottom: 0;
+  position: absolute;
   width: 100%;
+  bottom: 0;
   background-color: #e2c7aa;
   color: white;
 }
@@ -453,6 +463,14 @@ form button {
 }
 
 .preorder ul {
+  list-style: none;
+}
+
+.shipping-info {
+  text-align: center;
+}
+
+.shipping-info ul {
   list-style: none;
 }
 
@@ -553,5 +571,9 @@ form button {
   .cart-product h1 {
     font-size: 1rem;
   }
+}
+
+.product-image img {
+  width: 20%;
 }
 /*# sourceMappingURL=App.css.map */

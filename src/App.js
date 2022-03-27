@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Cart from "./components/Cart";
 import Preorder from "./components/Preorder";
 import Home from "./components/Home";
+import ShippingInfo from "./components/ShippingInfo";
 
 function App() {
   const options = {
@@ -28,7 +29,6 @@ function App() {
           <Route path={"/shop"}>
             <Shop />
           </Route>
-          <Route path={"/about"}></Route>
           <Route path={"/cart"}>
             <Cart />
           </Route>
@@ -38,8 +38,8 @@ function App() {
           <Route path={"/preorder"}>
             <Preorder />
           </Route>
-          <Route path={"/terms"}>
-            <Preorder />
+          <Route path={"/shippinginfo"}>
+            <ShippingInfo />
           </Route>
         </Switch>
       </BrowserRouter>

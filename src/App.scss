@@ -138,6 +138,16 @@ html {
   padding: 0.75em;
 }
 
+.home-page-about {
+  text-align: center;
+  margin-left: 15vw;
+  margin-right: 15vw;
+}
+
+.home-page-about h1 {
+  font-family: $title-font;
+}
+
 //SHOP CSS
 
 .shop {
@@ -377,9 +387,9 @@ form button {
 //Footer
 
 .footer {
-  position: fixed;
-  bottom: 0;
+  position: absolute;
   width: 100%;
+  bottom: 0;
   background-color: $background-color;
   color: white;
 }
@@ -419,6 +429,15 @@ form button {
 }
 
 .preorder ul {
+  list-style: none;
+}
+
+//SHIPPING INFO
+.shipping-info {
+  text-align: center;
+}
+
+.shipping-info ul {
   list-style: none;
 }
 
@@ -529,4 +548,9 @@ form button {
   .cart-product h1 {
     font-size: 1rem;
   }
+}
+
+//test
+.product-image img {
+  width: 20%;
 }
