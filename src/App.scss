@@ -29,6 +29,10 @@ html {
 
 //nav
 
+.nav-desktop {
+  display: block;
+}
+
 .nav-bar-headers ul {
   list-style-type: none;
   overflow: hidden;
@@ -74,19 +78,59 @@ html {
   margin-right: 5em;
 }
 
+// .nav-mobile {
+//   display: block;
+// }
+
+// .nav-bar-headers-mobile {
+//   list-style-type: none;
+//   overflow: hidden;
+//   text-align: center;
+//   padding: 0;
+//   overflow: none;
+// }
+
+// .nav-bar-headers-mobile li {
+//   display: inline;
+// }
+
+// .hamburger {
+//   float: left;
+//   width: 25px;
+// }
+
+// .hamburger-icon {
+//   height: 3em;
+// }
+
+// .title-mobile {
+//   font-family: $title-font;
+//   text-decoration: none;
+//   color: black;
+// }
+
+// .hamburger-menu {
+//   opacity: 0;
+//   animation-name: hamburger-slide;
+//   animation-direction: normal;
+//   animation-duration: 1s;
+//   animation-fill-mode: forwards;
+// }
+
 //Homepage
 
 .welcome-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  min-height: 15vw;
+  min-height: 30vw;
   margin-left: 3%;
   margin-right: 3%;
   text-align: center;
-  background-color: $background-color;
   padding: 10px;
+  background-image: url("./lily-note-welcome.jpg");
+  background-size: cover;
 }
 
 .welcome-banner button {
@@ -142,6 +186,10 @@ html {
   background-position: center;
 }
 
+.product-card img {
+  border-radius: 1em;
+}
+
 //PRODUCT INFO
 
 .product {
@@ -157,10 +205,13 @@ html {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  justify-content: center;
+  gap: 2em;
 }
 
 .flex-container img {
-  min-width: 20%;
+  max-width: 20%;
+  max-height: 20vw;
 }
 
 .product-info {
@@ -371,8 +422,18 @@ form button {
   list-style: none;
 }
 
-@media (max-width: 480px) {
+//ANIMATIONS
+
+@keyframes hamburger-slide {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
+
+//RESPONSIVE
 
 @media (max-width: 768px) {
   .title {
@@ -456,10 +517,16 @@ form button {
   .product-info p {
     font-size: 1rem;
   }
-}
 
-@media (max-width: 1024px) {
-}
+  .cart {
+    margin: 0;
+  }
 
-@media (max-width: 1200px) {
+  .cart-headers h1 {
+    font-size: 1rem;
+  }
+
+  .cart-product h1 {
+    font-size: 1rem;
+  }
 }

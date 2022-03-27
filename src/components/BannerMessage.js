@@ -2,7 +2,8 @@ import React, { useState } from "react";
 const BannerMessage = () => {
   const [message, setMessage] = useState({
     id: 1,
-    message: "Free shipping on orders over CA$25",
+    message:
+      "we believe that everday is a blank canvas, ready to be filled with life, love and beautiful things!",
   });
 
   return (

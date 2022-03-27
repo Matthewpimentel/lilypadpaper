@@ -23,6 +23,10 @@ html {
   color: white;
 }
 
+.nav-desktop {
+  display: block;
+}
+
 .nav-bar-headers ul {
   list-style-type: none;
   overflow: hidden;
@@ -70,19 +74,26 @@ html {
 }
 
 .welcome-banner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  min-height: 15vw;
+  min-height: 30vw;
   margin-left: 3%;
   margin-right: 3%;
   text-align: center;
-  background-color: #e2c7aa;
   padding: 10px;
+  background-image: url("./lily-note-welcome.jpg");
+  background-size: cover;
 }
 
 .welcome-banner button {
@@ -143,6 +154,10 @@ html {
   background-position: center;
 }
 
+.product-card img {
+  border-radius: 1em;
+}
+
 .product {
   display: block;
   margin-top: 3%;
@@ -163,10 +178,13 @@ html {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  justify-content: center;
+  gap: 2em;
 }
 
 .flex-container img {
-  min-width: 20%;
+  max-width: 20%;
+  max-height: 20vw;
 }
 
 .product-info {
@@ -438,6 +456,24 @@ form button {
   list-style: none;
 }
 
+@-webkit-keyframes hamburger-slide {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes hamburger-slide {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @media (max-width: 768px) {
   .title {
     margin-left: 0;
@@ -506,6 +542,15 @@ form button {
     width: 100%;
   }
   .product-info p {
+    font-size: 1rem;
+  }
+  .cart {
+    margin: 0;
+  }
+  .cart-headers h1 {
+    font-size: 1rem;
+  }
+  .cart-product h1 {
     font-size: 1rem;
   }
 }
