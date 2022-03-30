@@ -22,7 +22,7 @@
     "web-vitals": "^2.1.4"
   },
   "homepage": "http://localhost:3000/",
-  "proxy": "http://localhost:4242",
+  "proxy": "https://lily-pad-paper-backend.herokuapp.com:80",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

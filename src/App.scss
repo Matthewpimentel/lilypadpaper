@@ -8,6 +8,7 @@ body {
   height: 100%;
   font-family: $default-font;
   flex-wrap: wrap;
+  user-select: none;
 }
 
 html {
@@ -136,6 +137,17 @@ html {
 .welcome-banner button {
   font-family: "Times New Roman", Times, serif;
   padding: 0.75em;
+  background-color: white;
+  border-color: $background-color;
+  border-style: solid;
+  color: $background-color;
+  cursor: pointer;
+}
+
+.welcome-banner button:active {
+  background-color: $background-color;
+  color: white;
+  border-color: white;
 }
 
 .home-page-about {
@@ -274,6 +286,12 @@ html {
   font-size: 0.6rem;
 }
 
+.product-info button:active {
+  background-color: $background-color;
+  color: white;
+  border-color: white;
+}
+
 //cart
 
 .cart {
@@ -382,6 +400,16 @@ h1 {
 
 form button {
   float: right;
+  background-color: white;
+  border-color: $background-color;
+  border-style: solid;
+  color: $background-color;
+}
+
+form button:active {
+  background-color: $background-color;
+  color: white;
+  border-color: white;
 }
 
 //Footer

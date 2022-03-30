@@ -27,10 +27,12 @@ const Cart = () => {
     for (let i = 0; i < cartFromStorage.length; i++) {
       if (e.currentTarget.id == cartFromStorageState[i].id) {
         const updateArray = [...cartFromStorageState];
-        updateArray[i].quantity -= 1;
-        setCartFromStorageState(updateArray);
-        localStorage.clear();
-        localStorage.setItem("cart", JSON.stringify(updateArray));
+        if (updateArray[i].quantity > 1) {
+          updateArray[i].quantity -= 1;
+          setCartFromStorageState(updateArray);
+          localStorage.clear();
+          localStorage.setItem("cart", JSON.stringify(updateArray));
+        }
       }
     }
   };

@@ -5,6 +5,10 @@ body {
   font-family: "Cormorant Garamond", serif;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 html {
@@ -99,6 +103,17 @@ html {
 .welcome-banner button {
   font-family: "Times New Roman", Times, serif;
   padding: 0.75em;
+  background-color: white;
+  border-color: #e2c7aa;
+  border-style: solid;
+  color: #e2c7aa;
+  cursor: pointer;
+}
+
+.welcome-banner button:active {
+  background-color: #e2c7aa;
+  color: white;
+  border-color: white;
 }
 
 .home-page-about {
@@ -257,6 +272,12 @@ html {
   font-size: 0.6rem;
 }
 
+.product-info button:active {
+  background-color: #e2c7aa;
+  color: white;
+  border-color: white;
+}
+
 .cart {
   margin-left: 20%;
   margin-right: 20%;
@@ -404,6 +425,16 @@ h1 {
 
 form button {
   float: right;
+  background-color: white;
+  border-color: #e2c7aa;
+  border-style: solid;
+  color: #e2c7aa;
+}
+
+form button:active {
+  background-color: #e2c7aa;
+  color: white;
+  border-color: white;
 }
 
 .footer {
