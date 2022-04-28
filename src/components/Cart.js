@@ -4,8 +4,6 @@ import { FiTrash } from "react-icons/fi";
 import { useState, useEffect } from "react";
 
 const Cart = () => {
-  let divId;
-
   let cartFromStorage = JSON.parse(localStorage.getItem("cart"));
 
   const [cartFromStorageState, setCartFromStorageState] =
@@ -77,7 +75,7 @@ const Cart = () => {
               if (cartFromStorageState[i].id == val.id) {
                 return (
                   <div key={val.id} className="cart-product">
-                    <img src={val.images[0]}></img>
+                    <img alt={val.title} src={val.images[0]}></img>
                     <h1>{val.title}</h1>
                     <div className="cart-quantity">
                       <div

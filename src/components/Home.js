@@ -36,7 +36,7 @@ const Home = () => {
       </div>
       <div className="home-page-about">
         <div className="home-blurb">
-          <img src={Image}></img>
+          <img loading="lazy" alt="Image of product" src={Image}></img>
           <div>
             <h1>Meet the Brand</h1>
             <h2>
@@ -80,10 +80,10 @@ const Home = () => {
               Show Less
             </a>
           </div>
-          <img src={Image}></img>
+          <img loading="lazy" alt="Image of product" src={Image}></img>
         </div>
         <div className="home-blurb">
-          <img src={Image}></img>
+          <img loading="lazy" alt="Image of product" src={Image}></img>
           <div>
             <h1>How it Started</h1>
             <h2>
