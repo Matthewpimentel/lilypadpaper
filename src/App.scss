@@ -351,8 +351,13 @@ html {
 .quantity h1 {
   font-size: 1rem;
   margin: 0;
-  margin-left: 40%;
-  margin-top: 5%;
+  text-align: center;
+}
+
+.quantity-number {
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }
 
 .quantity-flex-container {
@@ -360,7 +365,6 @@ html {
   flex-direction: column;
   align-items: flex-end;
   justify-content: space-around;
-  width: 100%;
 }
 
 .up,
@@ -449,11 +453,11 @@ html {
 }
 
 .blank-margin {
-  width: 6.5% !important;
+  width: 14% !important;
 }
 
 .cart-headers h1 {
-  width: 19%;
+  width: 20%;
   font-size: 1.5rem;
 }
 
@@ -467,12 +471,12 @@ html {
 }
 
 .cart-product h1 {
-  width: 25%;
+  width: 30%;
   font-size: 1.5rem;
 }
 
 .cart-product img {
-  width: 10%;
+  width: 13%;
 }
 
 .cart-product.cart-plus-div {
@@ -489,7 +493,7 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 25%;
+  width: 30%;
 }
 
 .cart-plus-div {
@@ -512,7 +516,7 @@ h1 {
 
 .cart-spacer {
   display: flex;
-  width: 20%;
+  width: 25%;
   align-items: center;
   justify-content: center;
   border-top: 0.1em black solid;
@@ -617,6 +621,10 @@ div {
     font-size: 0.7rem;
   }
 
+  .product-container {
+    width: 100%;
+  }
+
   .card {
     flex-direction: column;
     align-items: center;
@@ -624,7 +632,8 @@ div {
   }
 
   .product-card {
-    min-height: 80vw;
+    min-height: 30vh;
+    min-width: 30vw;
   }
 
   .product-image-display {
@@ -666,7 +675,7 @@ div {
   }
 
   .quantity {
-    width: 25vw;
+    width: 35vw;
     height: 3.2vh;
   }
 

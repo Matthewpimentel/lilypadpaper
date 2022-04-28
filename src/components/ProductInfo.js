@@ -1,6 +1,6 @@
 import { itemsArray } from "./Items";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { FaArrowDown, FaArrowUp } from "react-icons/fa";
 
@@ -84,7 +84,7 @@ const ProductInfo = () => {
         {itemsArray.map((val, i) => {
           if (val.id == id) {
             return (
-              <div className="flex-container">
+              <div className="flex-container" key={i}>
                 <div
                   id="product-image-active"
                   className="product-image-display"
@@ -99,7 +99,9 @@ const ProductInfo = () => {
                   <h3>CA${val.price}</h3>
                   <h3>quantity</h3>
                   <div className="quantity">
-                    <h1>{quantity}</h1>
+                    <div className="quantity-number">
+                      <h1>{quantity}</h1>
+                    </div>
                     <div className="quantity-flex-container">
                       <FaArrowUp
                         size={10}
