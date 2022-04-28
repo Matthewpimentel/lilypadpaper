@@ -15,18 +15,19 @@ const Shop = () => {
           {itemsArray.map((val) => {
             return (
               <div key={val.id} className="product-container">
-                <Link to="/productInfo">
+                <Link to="/productInfo" style={{ textDecoration: "none" }}>
                   <div
                     onClick={getDivId}
                     className="product-card"
                     id={val.id}
                     style={{ backgroundImage: `url(${val.images[0]})` }}
                   ></div>
+
+                  <div className="product-info-blurb">
+                    <h1 className="title-product">{val.title}</h1>
+                    <h2>CA${val.price}</h2>
+                  </div>
                 </Link>
-                <div className="product-info-blurb">
-                  <h1 className="title-product">{val.title}</h1>
-                  <h2>CA${val.price}</h2>
-                </div>
               </div>
             );
           })}
