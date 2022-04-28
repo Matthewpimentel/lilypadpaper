@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import Items from "./Items";
+import { itemsArray } from "./Items";
 
 const Shop = () => {
   const getDivId = (e) => {
@@ -8,11 +8,11 @@ const Shop = () => {
   };
 
   return (
-    <div>
+    <div className="shop-page">
       <div className="shop">
         <h1>shop</h1>
         <div className="card">
-          {Items.map((val) => {
+          {itemsArray.map((val) => {
             return (
               <div key={val.id} className="product-container">
                 <Link to="/productInfo">
@@ -20,7 +20,7 @@ const Shop = () => {
                     onClick={getDivId}
                     className="product-card"
                     id={val.id}
-                    style={{ backgroundImage: `url(${val.image})` }}
+                    style={{ backgroundImage: `url(${val.images[0]})` }}
                   ></div>
                 </Link>
                 <div className="product-info-blurb">

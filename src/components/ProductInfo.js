@@ -1,17 +1,17 @@
-import Items from "./Items";
+import { itemsArray } from "./Items";
+
 import React, { useState } from "react";
 
 import { FaArrowDown, FaArrowUp } from "react-icons/fa";
 
 const ProductInfo = () => {
-  const [quantity, setQuantity] = useState(1);
   const id = window.value;
+  const [quantity, setQuantity] = useState(1);
+  const [mainImage, setMainImage] = useState(itemsArray[id].images[0]);
+  const [addedToCart, setAddedTocart] = useState("");
   let cartItems = JSON.parse(localStorage.getItem("cart"));
   let cart = [];
   let flag = true;
-  let storageFlag = true;
-
-  let itemsLength = Items.length;
 
   const addToQuantity = () => {
     if (quantity < 10) {
@@ -28,7 +28,7 @@ const ProductInfo = () => {
   const addToCart = () => {
     if (cartItems != undefined) {
       for (let i = 0; i < cartItems.length; i++) {
-        if (cartItems.length != 0 && cart.length < Items.length) {
+        if (cartItems.length != 0 && cart.length < itemsArray.length) {
           cart.push({ id: cartItems[i].id, quantity: cartItems[i].quantity });
         }
       }
@@ -42,23 +42,58 @@ const ProductInfo = () => {
 
     if (flag == true) {
       cart.push({ id: id, quantity: quantity });
-      console.log(cart.length);
-      console.log(flag);
     }
 
     localStorage.setItem("cart", JSON.stringify(cart));
-    console.log(cartItems);
-    console.log(cart);
+    setAddedTocart("Added To Cart!");
   };
 
+  const changePicture = (e) => {
+    const holdImage = mainImage;
+    setMainImage(e.currentTarget.src);
+    e.currentTarget.src = holdImage;
+  };
+
+  function readMore() {
+    var x = document.getElementById("shipping-blurb");
+    var y = document.getElementById("shipping-info-button");
+    var z = document.getElementById("shipping-info-readless");
+
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+
+    if (y.style.display === "none") {
+      y.style.display = "block";
+    } else {
+      y.style.display = "none";
+    }
+
+    if (z.style.display === "block") {
+      z.style.display = "none";
+    } else {
+      z.style.display = "block";
+    }
+  }
+
   return (
-    <div>
+    <div className="product-info-page">
       <div className="product">
-        {Items.map((val) => {
+        {itemsArray.map((val, i) => {
           if (val.id == id) {
             return (
               <div className="flex-container">
-                <img className="img" src={val.image}></img>
+                <div
+                  id="product-image-active"
+                  className="product-image-display"
+                >
+                  <img className="product-image-active" src={mainImage}></img>
+                  <img onClick={changePicture} src={val.images[1]}></img>
+                  <img onClick={changePicture} src={val.images[2]}></img>
+                  <img onClick={changePicture} src={val.images[2]}></img>
+                </div>
                 <div className="product-info">
                   <h1>{val.title}</h1>
                   <h3>CA${val.price}</h3>
@@ -79,10 +114,51 @@ const ProductInfo = () => {
                     </div>
                   </div>
 
-                  <button onClick={addToCart}>ADD TO CART</button>
+                  <button
+                    onClick={addToCart}
+                    className="product-info-add-to-cart-button"
+                  >
+                    ADD TO CART
+                  </button>
+                  <h3 className="product-info-added-to-cart">{addedToCart}</h3>
 
                   <p>{val.description}</p>
                   <p>{val.productInfo}</p>
+                  <div>
+                    <p
+                      className="shipping-info"
+                      id="shipping-info-button"
+                      onClick={readMore}
+                    >
+                      Shipping Info
+                    </p>
+                    <div className="shipping-blurb" id="shipping-blurb">
+                      <ul>
+                        <li>
+                          Orders placed for delivery within Canada are shipped
+                          via Canada Post.
+                        </li>
+                        <li>
+                          Free standard shipping Canadian shipping for orders
+                          $25+
+                        </li>
+                        <li>
+                          Lily Pad Paper & Co. is not liable for lost or stolen
+                          packages.
+                        </li>
+                        <li>
+                          We are currently not offering shipping to the U.S.
+                        </li>
+                      </ul>
+                      <p
+                        className="shipping-info-readless"
+                        id="shipping-info-readless"
+                        onClick={readMore}
+                      >
+                        Show less
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             );

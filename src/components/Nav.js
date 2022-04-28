@@ -5,6 +5,14 @@ import BannerMessage from "./BannerMessage";
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 const Nav = () => {
+  const openMenu = () => {
+    var hamburger = document.getElementById("hamburger-menu");
+    if (hamburger.style.display === "block") {
+      hamburger.style.display = "none";
+    } else {
+      hamburger.style.display = "block";
+    }
+  };
   return (
     <div>
       <div className="nav-desktop">
@@ -15,7 +23,9 @@ const Nav = () => {
               Lily Pad Paper & Co
             </Link>
           </li>
-          <img className="logo" src={logo}></img>
+          <Link to="/">
+            <img className="logo" src={logo}></img>
+          </Link>
           <div className="links">
             <li>
               <Link to="/shop">Shop</Link>
@@ -32,11 +42,11 @@ const Nav = () => {
           </div>
         </ul>
       </div>
-      {/* <div className="nav-mobile">
+      <div className="nav-mobile">
         <BannerMessage />
         <ul className="nav-bar-headers-mobile">
           <li className="hamburger">
-            <AiOutlineMenu className="hamburger-icon" />
+            <AiOutlineMenu className="hamburger-icon" onClick={openMenu} />
           </li>
           <li>
             <Link className="title-mobile" to="/">
@@ -44,17 +54,12 @@ const Nav = () => {
             </Link>
           </li>
         </ul>
-        <div className="hamburger-menu">
+        <div id="hamburger-menu" className="hamburger-menu">
           <ul>
             <li>
               <Link to="/shop">Shop</Link>
             </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <a href="about.asp">PlaceHolder </a>
-            </li>
+
             <li>
               <Link to="/cart">
                 <BsBag
@@ -66,7 +71,7 @@ const Nav = () => {
             </li>
           </ul>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };

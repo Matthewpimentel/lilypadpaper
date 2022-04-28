@@ -1,4 +1,4 @@
-import Items from "./Items.js";
+import { itemsArray } from "./Items.js";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { FiTrash } from "react-icons/fi";
 import { useState, useEffect } from "react";
@@ -50,10 +50,9 @@ const Cart = () => {
       }
     }
   };
-
-  return (
-    <div>
-      <div className="cart">
+  const CartNotEmpty = () => {
+    if (cartFromStorage.length > 0) {
+      return (
         <div className="cart-headers">
           <h1 className="blank-margin"></h1>
           <h1>Description</h1>
@@ -61,14 +60,24 @@ const Cart = () => {
           <h1>Remove</h1>
           <h1>Price</h1>
         </div>
+      );
+    } else {
+      return <h1 style={{ textAlign: "center" }}>Cart Is Empty!</h1>;
+    }
+  };
 
-        {Items.map((val) => {
+  return (
+    <div className="cart-page">
+      <div className="cart">
+        <CartNotEmpty></CartNotEmpty>
+
+        {itemsArray.map((val, i) => {
           if (localStorage.length > 0) {
             for (let i = 0; i < cartFromStorageState.length; i++) {
               if (cartFromStorageState[i].id == val.id) {
                 return (
                   <div key={val.id} className="cart-product">
-                    <img src={val.image}></img>
+                    <img src={val.images[0]}></img>
                     <h1>{val.title}</h1>
                     <div className="cart-quantity">
                       <div
@@ -107,7 +116,10 @@ const Cart = () => {
           }
         })}
       </div>
-      <form method="POST" action="/create-checkout-session">
+      <form
+        method="POST"
+        action="https://lily-pad-paper-backend.herokuapp.com/create-checkout-session"
+      >
         <input
           type="hidden"
           name="cart"
@@ -116,9 +128,15 @@ const Cart = () => {
         <input
           type="hidden"
           name="products"
-          value={JSON.stringify(Items)}
+          value={JSON.stringify(itemsArray)}
         ></input>
-        <button type="submit">Checkout</button>
+        {cartFromStorage.length > 0 ? (
+          <button className="checkout-button" type="submit">
+            Checkout
+          </button>
+        ) : (
+          " "
+        )}
       </form>
     </div>
   );
