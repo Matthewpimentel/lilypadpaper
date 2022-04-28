@@ -86,6 +86,7 @@ html {
   display: none;
   overflow: hidden;
   position: relative;
+  font-family: $title-font;
 }
 
 .nav-bar-headers-mobile {
@@ -348,39 +349,6 @@ html {
   color: $background-color;
 }
 
-.quantity {
-  display: flex;
-  border-width: 0.1em;
-  border-style: solid;
-  border-color: $background-color;
-  width: 15%;
-  height: 5%;
-}
-
-.quantity h1 {
-  font-size: 1rem;
-  margin: 0;
-  text-align: center;
-}
-
-.quantity-number {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-}
-
-.quantity-flex-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: space-around;
-}
-
-.up,
-.down {
-  float: right;
-}
-
 .product-info button {
   width: 35%;
   height: 5%;
@@ -427,6 +395,55 @@ html {
 
 .product-big-image-x:hover {
   color: $background-color;
+}
+
+.mobile-product-page {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.product-image-display-mobile {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 80%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.product-image-active-mobile {
+  order: -1;
+  flex: 1 0 100%;
+  width: 100%;
+  margin-bottom: 0.2em;
+}
+
+.product-image-display-mobile img {
+  width: 32.5%;
+}
+
+.product-info-mobile {
+  display: flex;
+  flex-direction: column;
+  margin-left: 9vw;
+}
+
+.mobile-add-to-cart {
+  display: flex;
+  flex-direction: row;
+
+  width: 100vw;
+}
+
+.mobile-add-to-cart select {
+  margin-right: 5vw;
+}
+
+.mobile-product-descriptions {
+  width: 80%;
 }
 
 .read-more-shipping {
@@ -524,9 +541,9 @@ h1 {
   width: 20%;
   align-items: center;
   justify-content: center;
-  border-top: 0.1em black solid;
-  border-left: 0.1em black solid;
-  border-bottom: 0.1em black solid;
+  border-top: 0.1em $background-color solid;
+  border-left: 0.1em $background-color solid;
+  border-bottom: 0.1em $background-color solid;
   cursor: pointer;
 }
 
@@ -541,8 +558,8 @@ h1 {
   width: 25%;
   align-items: center;
   justify-content: center;
-  border-top: 0.1em black solid;
-  border-bottom: 0.1em black solid;
+  border-top: 0.1em $background-color solid;
+  border-bottom: 0.1em $background-color solid;
 }
 
 .cart-minus-div {
@@ -551,9 +568,9 @@ h1 {
   justify-content: center;
   width: 20%;
   background-color: rgb(221, 220, 220);
-  border-top: 0.1em black solid;
-  border-right: 0.1em black solid;
-  border-bottom: 0.1em black solid;
+  border-top: 0.1em $background-color solid;
+  border-right: 0.1em $background-color solid;
+  border-bottom: 0.1em $background-color solid;
   cursor: pointer;
 }
 

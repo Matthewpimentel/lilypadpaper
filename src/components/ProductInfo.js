@@ -2,7 +2,7 @@ import { itemsArray } from "./Items";
 
 import React, { useState, useEffect } from "react";
 
-import { FaArrowDown, FaArrowUp } from "react-icons/fa";
+import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 
 const ProductInfo = () => {
   const id = window.value;
@@ -23,6 +23,13 @@ const ProductInfo = () => {
     if (quantity > 1) {
       setQuantity(quantity - 1);
     }
+  };
+
+  const setQuantityMobile = () => {
+    var e = document.getElementById("mobile-quantity");
+    var quantitySelected = parseInt(e.value);
+    setQuantity(quantitySelected);
+    console.log(quantity);
   };
 
   const addToCart = () => {
@@ -85,7 +92,7 @@ const ProductInfo = () => {
           if (val.id == id) {
             return (
               <div>
-                <div className="flex-container" key={i}>
+                {/* <div className="flex-container" key={i}>
                   <div
                     id="product-image-active"
                     className="product-image-display"
@@ -100,20 +107,24 @@ const ProductInfo = () => {
                     <h3>CA${val.price}</h3>
                     <h3>quantity</h3>
                     <div className="quantity">
-                      <div className="quantity-number">
-                        <h1>{quantity}</h1>
-                      </div>
-                      <div className="quantity-flex-container">
-                        <FaArrowUp
-                          size={10}
-                          className="up"
+                      <div className="cart-quantity">
+                        <div
+                          className="cart-plus-div"
+                          id={val.id}
                           onClick={addToQuantity}
-                        />
-                        <FaArrowDown
-                          size={10}
-                          className="down"
+                        >
+                          <AiOutlinePlus className="cart-plus" />
+                        </div>
+                        <div className="cart-spacer">
+                          <h1>{quantity}</h1>
+                        </div>
+                        <div
+                          className="cart-minus-div"
+                          id={val.id}
                           onClick={subFromQuantity}
-                        />
+                        >
+                          <AiOutlineMinus className="cart-minus" />
+                        </div>
                       </div>
                     </div>
 
@@ -129,6 +140,54 @@ const ProductInfo = () => {
 
                     <p>{val.description}</p>
                     <p>{val.productInfo}</p>
+                  </div>
+                </div> */}
+                <div className="mobile-product-page">
+                  <div
+                    id="product-image-active"
+                    className="product-image-display-mobile"
+                  >
+                    <img
+                      className="product-image-active-mobile"
+                      src={mainImage}
+                    ></img>
+                    <img onClick={changePicture} src={val.images[1]}></img>
+                    <img onClick={changePicture} src={val.images[2]}></img>
+                    <img onClick={changePicture} src={val.images[2]}></img>
+                  </div>
+                  <div className="product-info-mobile">
+                    <h1>{val.title}</h1>
+                    <h3>CA${val.price}</h3>
+                    <div className="mobile-add-to-cart">
+                      <form>
+                        <select
+                          name="quantity"
+                          id="mobile-quantity"
+                          onChange={setQuantityMobile}
+                        >
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                        </select>
+                      </form>
+                      <button
+                        onClick={addToCart}
+                        className="product-info-add-to-cart-button"
+                      >
+                        ADD TO CART
+                      </button>
+                    </div>
+                    <div className="mobile-product-descriptions">
+                      <p>{val.description}</p>
+                      <p>{val.productInfo}</p>
+                    </div>
                   </div>
                 </div>
               </div>

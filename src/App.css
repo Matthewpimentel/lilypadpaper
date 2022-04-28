@@ -80,6 +80,7 @@ html {
   display: none;
   overflow: hidden;
   position: relative;
+  font-family: "Dawning of a New Day", cursive;
 }
 
 .nav-bar-headers-mobile {
@@ -379,53 +380,6 @@ html {
   color: #e2c7aa;
 }
 
-.quantity {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  border-width: 0.1em;
-  border-style: solid;
-  border-color: #e2c7aa;
-  width: 15%;
-  height: 5%;
-}
-
-.quantity h1 {
-  font-size: 1rem;
-  margin: 0;
-  text-align: center;
-}
-
-.quantity-number {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.quantity-flex-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
-.up,
-.down {
-  float: right;
-}
-
 .product-info button {
   width: 35%;
   height: 5%;
@@ -486,6 +440,83 @@ html {
 
 .product-big-image-x:hover {
   color: #e2c7aa;
+}
+
+.mobile-product-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.product-image-display-mobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 80%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.product-image-active-mobile {
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 100%;
+          flex: 1 0 100%;
+  width: 100%;
+  margin-bottom: 0.2em;
+}
+
+.product-image-display-mobile img {
+  width: 32.5%;
+}
+
+.product-info-mobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 9vw;
+}
+
+.mobile-add-to-cart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100vw;
+}
+
+.mobile-add-to-cart select {
+  margin-right: 5vw;
+}
+
+.mobile-product-descriptions {
+  width: 80%;
 }
 
 .read-more-shipping {
@@ -619,9 +650,9 @@ h1 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border-top: 0.1em black solid;
-  border-left: 0.1em black solid;
-  border-bottom: 0.1em black solid;
+  border-top: 0.1em #e2c7aa solid;
+  border-left: 0.1em #e2c7aa solid;
+  border-bottom: 0.1em #e2c7aa solid;
   cursor: pointer;
 }
 
@@ -642,8 +673,8 @@ h1 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border-top: 0.1em black solid;
-  border-bottom: 0.1em black solid;
+  border-top: 0.1em #e2c7aa solid;
+  border-bottom: 0.1em #e2c7aa solid;
 }
 
 .cart-minus-div {
@@ -658,9 +689,9 @@ h1 {
           justify-content: center;
   width: 20%;
   background-color: #dddcdc;
-  border-top: 0.1em black solid;
-  border-right: 0.1em black solid;
-  border-bottom: 0.1em black solid;
+  border-top: 0.1em #e2c7aa solid;
+  border-right: 0.1em #e2c7aa solid;
+  border-bottom: 0.1em #e2c7aa solid;
   cursor: pointer;
 }
 
