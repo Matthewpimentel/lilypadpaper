@@ -119,6 +119,10 @@ html {
   list-style: none;
 }
 
+.hamburger-menu li {
+  margin-bottom: 0.5em;
+}
+
 .hamburger-menu li a {
   text-decoration: none;
   color: black;
@@ -213,6 +217,7 @@ html {
 
 .home-blurb img {
   width: 30%;
+  height: 30%;
 }
 
 .home-blurb div {
@@ -424,20 +429,33 @@ html {
   color: $background-color;
 }
 
+.read-more-shipping {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .shipping-info {
   display: block;
   color: $background-color;
   cursor: pointer;
 }
 
+.shipping-info {
+  font-size: 2em;
+}
+
 .shipping-blurb {
   display: none;
+  font-size: 1.5em;
 }
 
 .shipping-info-readless {
   display: none;
   cursor: pointer;
   color: $background-color;
+  font-size: 2em;
 }
 
 //cart

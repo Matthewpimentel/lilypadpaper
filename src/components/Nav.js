@@ -1,7 +1,6 @@
 import logo from "../logo.png";
 import { BsBag } from "react-icons/bs";
 import { AiOutlineMenu } from "react-icons/ai";
-import BannerMessage from "./BannerMessage";
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 const Nav = () => {
@@ -16,7 +15,6 @@ const Nav = () => {
   return (
     <div>
       <div className="nav-desktop">
-        <BannerMessage />
         <ul className="nav-bar-headers">
           <li>
             <Link className="title" to="/">
@@ -43,13 +41,12 @@ const Nav = () => {
         </ul>
       </div>
       <div className="nav-mobile">
-        <BannerMessage />
         <ul className="nav-bar-headers-mobile">
           <li className="hamburger">
             <AiOutlineMenu className="hamburger-icon" onClick={openMenu} />
           </li>
           <li>
-            <Link className="title-mobile" to="/">
+            <Link className="title-mobile" to="/" onClick={openMenu}>
               Lily Pad Paper & Co
             </Link>
           </li>
@@ -57,11 +54,12 @@ const Nav = () => {
         <div id="hamburger-menu" className="hamburger-menu">
           <ul>
             <li>
-              <Link to="/shop">Shop</Link>
+              <Link to="/shop" onClick={openMenu}>
+                Shop
+              </Link>
             </li>
-
             <li>
-              <Link to="/cart">
+              <Link to="/cart" onClick={openMenu}>
                 <BsBag
                   size={25}
                   className="shopping-bag"

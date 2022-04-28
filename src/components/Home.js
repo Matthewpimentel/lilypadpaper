@@ -1,6 +1,7 @@
 import Background from "../background.jpg";
 import { Link } from "react-router-dom";
 import Image from "../lily-note-blank.JPG";
+import BannerMessage from "./BannerMessage";
 const Home = () => {
   function readMore() {
     var x = document.getElementById("home-blurb-readmore");
@@ -59,13 +60,13 @@ const Home = () => {
               fun and patient! Her dream one day is to build a happy and healthy
               family of her own.
             </h2>
-            <a
+            <p
               id="readmore-button"
               className="readmore-button"
               onClick={readMore}
             >
               Read More
-            </a>
+            </p>
 
             <h2 id="home-blurb-readmore" className="home-blurb-readmore">
               When Megan is not working, she is focused on living a balanced

@@ -84,82 +84,51 @@ const ProductInfo = () => {
         {itemsArray.map((val, i) => {
           if (val.id == id) {
             return (
-              <div className="flex-container" key={i}>
-                <div
-                  id="product-image-active"
-                  className="product-image-display"
-                >
-                  <img className="product-image-active" src={mainImage}></img>
-                  <img onClick={changePicture} src={val.images[1]}></img>
-                  <img onClick={changePicture} src={val.images[2]}></img>
-                  <img onClick={changePicture} src={val.images[2]}></img>
-                </div>
-                <div className="product-info">
-                  <h1>{val.title}</h1>
-                  <h3>CA${val.price}</h3>
-                  <h3>quantity</h3>
-                  <div className="quantity">
-                    <div className="quantity-number">
-                      <h1>{quantity}</h1>
-                    </div>
-                    <div className="quantity-flex-container">
-                      <FaArrowUp
-                        size={10}
-                        className="up"
-                        onClick={addToQuantity}
-                      />
-                      <FaArrowDown
-                        size={10}
-                        className="down"
-                        onClick={subFromQuantity}
-                      />
-                    </div>
-                  </div>
-
-                  <button
-                    onClick={addToCart}
-                    className="product-info-add-to-cart-button"
+              <div>
+                <div className="flex-container" key={i}>
+                  <div
+                    id="product-image-active"
+                    className="product-image-display"
                   >
-                    ADD TO CART
-                  </button>
-                  <h3 className="product-info-added-to-cart">{addedToCart}</h3>
-
-                  <p>{val.description}</p>
-                  <p>{val.productInfo}</p>
-                  <div>
-                    <p
-                      className="shipping-info"
-                      id="shipping-info-button"
-                      onClick={readMore}
-                    >
-                      Shipping Info
-                    </p>
-                    <div className="shipping-blurb" id="shipping-blurb">
-                      <ul>
-                        <li>
-                          Orders placed for delivery within Canada are shipped
-                          via Canada Post.
-                        </li>
-                        <li>
-                          Free standard shipping Canadian shipping for orders
-                          $25+
-                        </li>
-                        <li>
-                          Lily Pad Paper & Co. is not liable for lost or stolen
-                          packages.
-                        </li>
-                        <li>
-                          We are currently not offering shipping to the U.S.
-                        </li>
-                      </ul>
-                      <p
-                        className="shipping-info-readless"
-                        id="shipping-info-readless"
-                        onClick={readMore}
-                      >
-                        Show less
-                      </p>
+                    <img className="product-image-active" src={mainImage}></img>
+                    <img onClick={changePicture} src={val.images[1]}></img>
+                    <img onClick={changePicture} src={val.images[2]}></img>
+                    <img onClick={changePicture} src={val.images[2]}></img>
+                  </div>
+                  <div className="product-info">
+                    <h1>{val.title}</h1>
+                    <h3>CA${val.price}</h3>
+                    <h3>quantity</h3>
+                    <div className="quantity">
+                      <div className="quantity-number">
+                        <h1>{quantity}</h1>
+                      </div>
+                      <div className="quantity-flex-container">
+                        <FaArrowUp
+                          size={10}
+                          className="up"
+                          onClick={addToQuantity}
+                        />
+                        <FaArrowDown
+                          size={10}
+                          className="down"
+                          onClick={subFromQuantity}
+                        />
+                      </div>
                     </div>
+
+                    <button
+                      onClick={addToCart}
+                      className="product-info-add-to-cart-button"
+                    >
+                      ADD TO CART
+                    </button>
+                    <h3 className="product-info-added-to-cart">
+                      {addedToCart}
+                    </h3>
+
+                    <p>{val.description}</p>
+                    <p>{val.productInfo}</p>
                   </div>
                 </div>
               </div>

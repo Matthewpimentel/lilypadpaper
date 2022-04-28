@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Cart from "./components/Cart";
 import Preorder from "./components/Preorder";
 import Home from "./components/Home";
+import BannerMessage from "./components/BannerMessage";
 
 function App() {
   const options = {
@@ -18,6 +19,7 @@ function App() {
         name="viewport"
         content="width=device-width, initial-scale=1.0"
       ></meta>
+      <BannerMessage />
       <BrowserRouter>
         <Nav />
         <Switch>
