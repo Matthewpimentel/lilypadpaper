@@ -122,6 +122,7 @@ html {
 
 .hamburger-menu li {
   margin-bottom: 0.5em;
+  font-family: $default-font;
 }
 
 .hamburger-menu li a {
@@ -434,7 +435,6 @@ html {
 .mobile-add-to-cart {
   display: flex;
   flex-direction: row;
-
   width: 100vw;
 }
 

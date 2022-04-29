@@ -22,7 +22,7 @@ const Nav = () => {
             </Link>
           </li>
           <Link to="/">
-            <img className="logo" src={logo}></img>
+            <img className="logo" alt="lily pad logo" src={logo}></img>
           </Link>
           <div className="links">
             <li>

@@ -37,7 +37,7 @@ let mealPlanner = new MakeItems(
   1,
   "weekly meal planner",
   [meal, meal2, meal3, meal4],
-  16,
+  10,
   "The Weekly Meal Planner is a simple and functional way to plan meals for you and your family. It makes planning meals easy - no more scrambling to figure out what’s for dinner!",
   "30 pages of high quality paper. 5” x 7”. Exclusive to Lily Pad Paper & Co. "
 );
@@ -46,7 +46,7 @@ let groceryList = new MakeItems(
   2,
   "grocery list",
   [grocery, grocery2, grocery3, grocery4],
-  16,
+  8,
   "Pair our Grocery List with our Weekly Meal Planner - the ultimate duo!",
   "30 pages of high quality paper. 4” x 9”. Exclusive to Lily Pad Paper & Co."
 );
@@ -55,7 +55,7 @@ let weeklyPlanner = new MakeItems(
   3,
   "weekly planner",
   [planner, planner2, planner3, planner4],
-  16,
+  12,
   "The Weekly Meal Planner is a simple and functional way to plan meals for your family. It makes planning meals easy - no more scrambling to figure out what’s for dinner!",
   "30 pages of high quality paper. 10” x 8” Exclusive to Lily Pad Paper & Co."
 );

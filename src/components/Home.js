@@ -1,4 +1,3 @@
-import Background from "../Images/lily-note-welcome.webp";
 import { Link } from "react-router-dom";
 import Image1 from "../Images/lily-grocery-4.webp";
 import Image2 from "../Images/lily-note-meal.webp";
