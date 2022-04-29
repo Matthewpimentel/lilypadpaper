@@ -1,7 +1,8 @@
-import Background from "../background.jpg";
+import Background from "../Images/lily-note-welcome.webp";
 import { Link } from "react-router-dom";
-import Image from "../lily-note-blank.JPG";
-import BannerMessage from "./BannerMessage";
+import Image1 from "../Images/lily-grocery-4.webp";
+import Image2 from "../Images/lily-note-meal.webp";
+import Image3 from "../Images/lily-note-notepad.webp";
 const Home = () => {
   function readMore() {
     var x = document.getElementById("home-blurb-readmore");
@@ -37,7 +38,7 @@ const Home = () => {
       </div>
       <div className="home-page-about">
         <div className="home-blurb">
-          <img loading="lazy" alt="Image of product" src={Image}></img>
+          <img loading="lazy" alt="Image of product" src={Image1}></img>
           <div>
             <h1>Meet the Brand</h1>
             <h2>
@@ -81,10 +82,10 @@ const Home = () => {
               Show Less
             </a>
           </div>
-          <img loading="lazy" alt="Image of product" src={Image}></img>
+          <img loading="lazy" alt="Image of product" src={Image2}></img>
         </div>
         <div className="home-blurb">
-          <img loading="lazy" alt="Image of product" src={Image}></img>
+          <img loading="lazy" alt="Image of product" src={Image3}></img>
           <div>
             <h1>How it Started</h1>
             <h2>

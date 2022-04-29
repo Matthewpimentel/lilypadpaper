@@ -92,7 +92,7 @@ const ProductInfo = () => {
           if (val.id == id) {
             return (
               <div>
-                {/* <div className="flex-container" key={i}>
+                <div className="flex-container" key={i}>
                   <div
                     id="product-image-active"
                     className="product-image-display"
@@ -100,7 +100,7 @@ const ProductInfo = () => {
                     <img className="product-image-active" src={mainImage}></img>
                     <img onClick={changePicture} src={val.images[1]}></img>
                     <img onClick={changePicture} src={val.images[2]}></img>
-                    <img onClick={changePicture} src={val.images[2]}></img>
+                    <img onClick={changePicture} src={val.images[3]}></img>
                   </div>
                   <div className="product-info">
                     <h1>{val.title}</h1>
@@ -141,7 +141,7 @@ const ProductInfo = () => {
                     <p>{val.description}</p>
                     <p>{val.productInfo}</p>
                   </div>
-                </div> */}
+                </div>
                 <div className="mobile-product-page">
                   <div
                     id="product-image-active"

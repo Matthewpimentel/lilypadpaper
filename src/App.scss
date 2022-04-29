@@ -174,7 +174,7 @@ html {
   margin-right: 3%;
   text-align: center;
   padding: 10px;
-  background-image: url("./lily-note-welcome.jpg");
+  background-image: url("./Images/lily-note-welcome.webp");
   background-size: cover;
 }
 
@@ -398,7 +398,7 @@ html {
 }
 
 .mobile-product-page {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: flex-start;
 }
@@ -660,6 +660,10 @@ div {
     font-size: 0.7rem;
   }
 
+  .flex-container {
+    display: none;
+  }
+
   .product-container {
     width: 100%;
   }
@@ -689,6 +693,10 @@ div {
   .product-image-display img {
     width: 33.2%;
     align-self: center;
+  }
+
+  .mobile-product-page {
+    display: flex;
   }
 
   .shop h1 {

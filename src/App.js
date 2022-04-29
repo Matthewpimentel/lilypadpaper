@@ -7,6 +7,7 @@ import Cart from "./components/Cart";
 import Preorder from "./components/Preorder";
 import Home from "./components/Home";
 import BannerMessage from "./components/BannerMessage";
+import Success from "./components/Success";
 
 function App() {
   const options = {
@@ -37,6 +38,9 @@ function App() {
           </Route>
           <Route path={"/preorder"}>
             <Preorder />
+          </Route>
+          <Route path={"/success"}>
+            <Success />
           </Route>
         </Switch>
       </BrowserRouter>

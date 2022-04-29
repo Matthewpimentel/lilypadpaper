@@ -1,4 +1,4 @@
-import logo from "../logo.png";
+import logo from "../Images/logo.webp";
 import { BsBag } from "react-icons/bs";
 import { AiOutlineMenu } from "react-icons/ai";
 import React, { useState, useEffect, useContext } from "react";
