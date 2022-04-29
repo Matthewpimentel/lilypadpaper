@@ -8,6 +8,7 @@ import Preorder from "./components/Preorder";
 import Home from "./components/Home";
 import BannerMessage from "./components/BannerMessage";
 import Success from "./components/Success";
+import Footer from "./components/Footer";
 
 function App() {
   const options = {
@@ -44,6 +45,7 @@ function App() {
           </Route>
         </Switch>
       </BrowserRouter>
+      <Footer />
     </div>
   );
 }

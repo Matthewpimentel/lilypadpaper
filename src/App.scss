@@ -8,12 +8,7 @@ body {
   height: 100%;
   min-height: 100%;
   font-family: $default-font;
-
   user-select: none;
-}
-
-html {
-  height: 100%;
 }
 
 //Banner
@@ -186,6 +181,7 @@ html {
   border-color: $background-color;
   border-style: solid;
   color: $background-color;
+  font-size: 1.2em;
   cursor: pointer;
 }
 
@@ -592,9 +588,9 @@ form button {
   float: right;
   margin-right: 10vw;
   background-color: white;
-  border-color: $background-color;
-  border-style: solid;
+  border: 0.1em solid $background-color;
   color: $background-color;
+  font-size: 2rem;
 }
 
 form button:active {
@@ -604,11 +600,24 @@ form button:active {
 }
 
 //Footer
-
-div {
+.footer {
+  display: flex;
   position: relative;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  bottom: 0;
+  margin-top: 30vh;
+  width: 100%;
+  background-color: $background-color;
+  height: 6vh;
 }
 
+.footer a {
+  margin-right: 2em;
+  color: black;
+}
 //preorder
 
 .preorder {

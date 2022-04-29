@@ -10,10 +10,6 @@ body {
           user-select: none;
 }
 
-html {
-  height: 100%;
-}
-
 .banner {
   background-color: #e2c7aa;
   padding: 0.5em;
@@ -196,6 +192,7 @@ html {
   border-color: #e2c7aa;
   border-style: solid;
   color: #e2c7aa;
+  font-size: 1.2em;
   cursor: pointer;
 }
 
@@ -712,9 +709,9 @@ form button {
   float: right;
   margin-right: 10vw;
   background-color: white;
-  border-color: #e2c7aa;
-  border-style: solid;
+  border: 0.1em solid #e2c7aa;
   color: #e2c7aa;
+  font-size: 2rem;
 }
 
 form button:active {
@@ -723,8 +720,32 @@ form button:active {
   border-color: white;
 }
 
-div {
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  bottom: 0;
+  margin-top: 30vh;
+  width: 100%;
+  background-color: #e2c7aa;
+  height: 6vh;
+}
+
+.footer a {
+  margin-right: 2em;
+  color: black;
 }
 
 .preorder {
