@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 
 const Cart = () => {
   let cartFromStorage = JSON.parse(localStorage.getItem("cart"));
+  const [quantity, setQuantity] = useState(1);
 
   const [cartFromStorageState, setCartFromStorageState] =
     useState(cartFromStorage);

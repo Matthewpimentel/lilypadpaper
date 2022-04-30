@@ -181,7 +181,7 @@ body {
   border-color: $background-color;
   border-style: solid;
   color: $background-color;
-  font-size: 1.2em;
+  font-size: 0.9em;
   cursor: pointer;
 }
 
@@ -262,6 +262,8 @@ body {
   justify-content: space-evenly;
 }
 
+//Product Info
+
 .product-container {
   text-align: center;
   width: 30%;
@@ -272,8 +274,12 @@ body {
   background-position: center;
 }
 
+.product-info-back-button svg {
+  color: $background-color;
+}
+
 .title-product {
-  font-family: $default-font;
+  font-family: black;
   color: black;
 }
 
@@ -321,6 +327,7 @@ body {
   flex-direction: row;
   justify-content: center;
   gap: 2vw;
+  min-height: 100%;
 }
 
 .flex-container-img {
@@ -369,19 +376,20 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   width: 20%;
-  justify-content: space-between;
+  align-content: flex-start;
 }
 
 .product-image-active {
   order: -1;
-  flex: 1 0 100%;
+  flex: 0 100%;
   width: 100%;
-  margin-bottom: 0.2em;
 }
 
 .product-image-display img {
-  width: 33%;
+  width: 32%;
   align-self: center;
+  margin-right: 1.33%;
+  margin-top: 1rem;
 }
 
 .product-big-image-x {
@@ -392,6 +400,12 @@ body {
 
 .product-big-image-x:hover {
   color: $background-color;
+}
+
+.quantity-selector {
+  border: solid $background-color 0.1em;
+  width: 3vw;
+  height: 3vh;
 }
 
 .mobile-product-page {
@@ -425,13 +439,14 @@ body {
 .product-info-mobile {
   display: flex;
   flex-direction: column;
-  margin-left: 9vw;
+  align-items: flex-start;
+  margin-left: 1em;
 }
 
 .mobile-add-to-cart {
   display: flex;
   flex-direction: row;
-  width: 100vw;
+  width: 90vw;
 }
 
 .mobile-add-to-cart select {
@@ -503,15 +518,16 @@ body {
   align-items: center;
   border-top: 0.1em solid $background-color;
   text-align: center;
+  margin-left: 0.5em;
 }
 
 .cart-product h1 {
-  width: 30%;
+  width: 25%;
   font-size: 1.5rem;
 }
 
 .cart-product img {
-  width: 13%;
+  width: 14.5%;
 }
 
 .cart-product.cart-plus-div {
@@ -528,7 +544,7 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 30%;
+  width: 15vw;
 }
 
 .cart-plus-div {
@@ -577,8 +593,8 @@ h1 {
 }
 
 .cart-trash {
-  width: 20%;
-  height: 2rem;
+  width: 25%;
+  height: 4rem;
   color: $background-color;
   cursor: pointer;
 }
@@ -590,7 +606,7 @@ form button {
   background-color: white;
   border: 0.1em solid $background-color;
   color: $background-color;
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
 form button:active {
@@ -608,7 +624,7 @@ form button:active {
   align-items: center;
   text-align: center;
   bottom: 0;
-  margin-top: 30vh;
+  margin-top: 40vh;
   width: 100%;
   background-color: $background-color;
   height: 6vh;
@@ -626,6 +642,25 @@ form button:active {
 
 .preorder ul {
   list-style: none;
+}
+
+//Success Page
+.success-page-div {
+  width: 100%;
+  height: 100vh;
+}
+
+.success-page-blurb {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.success-page-blurb p {
+  font-size: 1.3em;
+  text-align: center;
 }
 
 //RESPONSIVE
@@ -680,6 +715,7 @@ form button:active {
   .card {
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding-bottom: 150px;
   }
 
@@ -691,12 +727,6 @@ form button:active {
   .product-image-display {
     width: 40%;
     align-content: center;
-  }
-
-  .product-image-active {
-    order: -1;
-    flex: 1 0 100%;
-    width: 100%;
   }
 
   .product-image-display img {
@@ -778,5 +808,13 @@ form button:active {
 
   .home-blurb div {
     width: 45%;
+  }
+
+  .cart-quantity {
+    width: 25%;
+  }
+
+  .cart-trash {
+    height: 10vw;
   }
 }

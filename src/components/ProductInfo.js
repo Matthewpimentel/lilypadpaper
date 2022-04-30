@@ -1,8 +1,9 @@
 import { itemsArray } from "./Items";
 
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
+import { AiOutlineRollback } from "react-icons/ai";
 
 const ProductInfo = () => {
   const id = window.value;
@@ -12,18 +13,6 @@ const ProductInfo = () => {
   let cartItems = JSON.parse(localStorage.getItem("cart"));
   let cart = [];
   let flag = true;
-
-  const addToQuantity = () => {
-    if (quantity < 10) {
-      setQuantity(quantity + 1);
-    }
-  };
-
-  const subFromQuantity = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-    }
-  };
 
   const setQuantityMobile = () => {
     var e = document.getElementById("mobile-quantity");
@@ -93,40 +82,45 @@ const ProductInfo = () => {
             return (
               <div>
                 <div className="flex-container" key={i}>
+                  <div className="product-info-back-button">
+                    <Link to="/shop">
+                      <AiOutlineRollback size={40} />
+                    </Link>
+                  </div>
                   <div
                     id="product-image-active"
                     className="product-image-display"
                   >
                     <img className="product-image-active" src={mainImage}></img>
-                    <img onClick={changePicture} src={val.images[1]}></img>
-                    <img onClick={changePicture} src={val.images[2]}></img>
-                    <img onClick={changePicture} src={val.images[3]}></img>
+                    <div>
+                      <img onClick={changePicture} src={val.images[1]}></img>
+                      <img onClick={changePicture} src={val.images[2]}></img>
+                      <img onClick={changePicture} src={val.images[3]}></img>
+                    </div>
                   </div>
                   <div className="product-info">
                     <h1>{val.title}</h1>
                     <h3>CA${val.price}</h3>
                     <h3>quantity</h3>
-                    <div className="quantity">
-                      <div className="cart-quantity">
-                        <div
-                          className="cart-plus-div"
-                          id={val.id}
-                          onClick={addToQuantity}
-                        >
-                          <AiOutlinePlus className="cart-plus" />
-                        </div>
-                        <div className="cart-spacer">
-                          <h1>{quantity}</h1>
-                        </div>
-                        <div
-                          className="cart-minus-div"
-                          id={val.id}
-                          onClick={subFromQuantity}
-                        >
-                          <AiOutlineMinus className="cart-minus" />
-                        </div>
-                      </div>
-                    </div>
+                    <form>
+                      <select
+                        name="quantity"
+                        id="mobile-quantity"
+                        className="quantity-selector"
+                        onChange={setQuantityMobile}
+                      >
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                      </select>
+                    </form>
 
                     <button
                       onClick={addToCart}
