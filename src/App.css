@@ -393,6 +393,7 @@ body {
   border-style: solid;
   color: #e2c7aa;
   font-size: 0.6rem;
+  cursor: pointer;
 }
 
 .product-info button:active {
