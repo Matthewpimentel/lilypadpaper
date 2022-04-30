@@ -187,12 +187,12 @@ body {
 
 .welcome-banner button {
   font-family: "Times New Roman", Times, serif;
-  padding: 0.75em;
+  padding: 0.75rem;
   background-color: white;
   border-color: #e2c7aa;
   border-style: solid;
   color: #e2c7aa;
-  font-size: 0.9em;
+  font-size: 0.9rem;
   cursor: pointer;
 }
 
@@ -740,6 +740,7 @@ form button:active {
   display: -ms-flexbox;
   display: flex;
   position: relative;
+  bottom: 0;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -751,9 +752,8 @@ form button:active {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  bottom: 0;
-  margin-top: 40vh;
   width: 100%;
+  margin-top: 30vw;
   background-color: #e2c7aa;
   height: 6vh;
 }
@@ -826,9 +826,8 @@ form button:active {
   .welcome-banner h2 {
     font-size: 1rem;
   }
-  .footer-links a {
-    margin-bottom: 1vh;
-    font-size: 0.7rem;
+  .welcome-banner button {
+    font-size: 0.5em;
   }
   .flex-container {
     display: none;
