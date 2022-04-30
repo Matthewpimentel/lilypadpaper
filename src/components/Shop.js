@@ -5,6 +5,7 @@ import { itemsArray } from "./Items";
 const Shop = () => {
   const getDivId = (e) => {
     window.value = e.currentTarget.id;
+    localStorage.setItem("id", e.currentTarget.id);
   };
 
   return (

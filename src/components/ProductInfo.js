@@ -6,7 +6,10 @@ import { Link } from "react-router-dom";
 import { AiOutlineRollback } from "react-icons/ai";
 
 const ProductInfo = () => {
-  const id = window.value;
+  var id = window.value;
+  if (localStorage.getItem("id").length > 0) {
+    id = localStorage.getItem("id");
+  }
   const [quantity, setQuantity] = useState(1);
   const [mainImage, setMainImage] = useState(itemsArray[id].images[0]);
   const [addedToCart, setAddedTocart] = useState("");
@@ -49,30 +52,6 @@ const ProductInfo = () => {
     setMainImage(e.currentTarget.src);
     e.currentTarget.src = holdImage;
   };
-
-  function readMore() {
-    var x = document.getElementById("shipping-blurb");
-    var y = document.getElementById("shipping-info-button");
-    var z = document.getElementById("shipping-info-readless");
-
-    if (x.style.display === "block") {
-      x.style.display = "none";
-    } else {
-      x.style.display = "block";
-    }
-
-    if (y.style.display === "none") {
-      y.style.display = "block";
-    } else {
-      y.style.display = "none";
-    }
-
-    if (z.style.display === "block") {
-      z.style.display = "none";
-    } else {
-      z.style.display = "block";
-    }
-  }
 
   return (
     <div className="product-info-page">
