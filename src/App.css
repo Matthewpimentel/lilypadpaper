@@ -449,7 +449,7 @@ body {
 
 .quantity-selector {
   border: solid #e2c7aa 0.1em;
-  width: 3vw;
+  width: 5vw;
   height: 3vh;
 }
 
@@ -805,6 +805,17 @@ form button:active {
   text-align: center;
 }
 
+.product-info-added-to-cart {
+  margin-left: 1em;
+}
+
+.product-info-add-to-cart-button {
+  background-color: white;
+  border: solid #e2c7aa 0.2em;
+  max-width: 30vw;
+  max-height: 4vh;
+}
+
 @media (max-width: 768px) {
   .nav-desktop {
     display: none;
@@ -938,6 +949,14 @@ form button:active {
   }
   .cart-trash {
     height: 10vw;
+  }
+  .quantity-selector {
+    border: solid #e2c7aa 0.1em;
+    width: 10vw;
+    height: 3vh;
+  }
+  .mobile-quantity-selector {
+    border-color: #e2c7aa;
   }
 }
 /*# sourceMappingURL=App.css.map */

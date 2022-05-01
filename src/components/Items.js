@@ -58,7 +58,7 @@ let weeklyPlanner = new MakeItems(
   "weekly planner",
   [planner1, planner2, planner3, planner4],
   12,
-  "The Weekly Meal Planner is a simple and functional way to plan meals for your family. It makes planning meals easy - no more scrambling to figure out what’s for dinner!",
-  "30 pages of high quality paper. 10” x 8” Exclusive to Lily Pad Paper & Co."
+  "Your weekly schedule at a glance. Completely customizable to input your own dates. Use the focus section to write down your weekly focus - movement, mindfulness etc.",
+  "30 pages of high quality paper. 10” x 8”. Exclusive to Lily Pad Paper & Co."
 );
 export let itemsArray = [notepad, mealPlanner, groceryList, weeklyPlanner];

@@ -2,8 +2,10 @@ import { itemsArray } from "./Items";
 
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import { updateCartQuantity } from "./Nav";
 import { AiOutlineRollback } from "react-icons/ai";
+
+import NavObj from "./Nav";
 
 const ProductInfo = () => {
   var id = window.value;
@@ -17,11 +19,18 @@ const ProductInfo = () => {
   let cart = [];
   let flag = true;
 
+  const setQuantityDesktop = () => {
+    var x = document.getElementById("desktop-quantity-selector");
+    var quantitySelected = parseInt(x.value);
+    setQuantity(quantitySelected);
+    console.log(quantitySelected);
+  };
+
   const setQuantityMobile = () => {
-    var e = document.getElementById("mobile-quantity");
+    var e = document.getElementById("mobile-quantity-selector");
     var quantitySelected = parseInt(e.value);
     setQuantity(quantitySelected);
-    console.log(quantity);
+    console.log(quantitySelected);
   };
 
   const addToCart = () => {
@@ -48,6 +57,7 @@ const ProductInfo = () => {
     }
 
     localStorage.setItem("cart", JSON.stringify(cart));
+
     setAddedTocart("Added To Cart!");
   };
 
@@ -110,7 +120,7 @@ const ProductInfo = () => {
                         name="quantity"
                         id="desktop-quantity-selector"
                         className="quantity-selector"
-                        onChange={setQuantityMobile}
+                        onChange={setQuantityDesktop}
                       >
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -160,6 +170,7 @@ const ProductInfo = () => {
                         <select
                           name="quantity"
                           id="mobile-quantity-selector"
+                          className="mobile-quantity-selector"
                           onChange={setQuantityMobile}
                         >
                           <option value="1">1</option>

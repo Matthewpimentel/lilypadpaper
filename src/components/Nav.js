@@ -4,6 +4,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 const Nav = () => {
+  const [quantity, setQuantity] = useState(0);
   const openMenu = () => {
     var hamburger = document.getElementById("hamburger-menu");
     if (hamburger.style.display === "block") {
@@ -12,6 +13,7 @@ const Nav = () => {
       hamburger.style.display = "block";
     }
   };
+
   return (
     <div>
       <div className="nav-desktop">
@@ -73,4 +75,5 @@ const Nav = () => {
     </div>
   );
 };
+
 export default Nav;
