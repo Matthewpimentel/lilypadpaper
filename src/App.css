@@ -812,8 +812,8 @@ form button:active {
 .product-info-add-to-cart-button {
   background-color: white;
   border: solid #e2c7aa 0.2em;
-  max-width: 30vw;
-  max-height: 4vh;
+  max-width: 35vw;
+  max-height: 5.5vh;
 }
 
 @media (max-width: 768px) {
@@ -952,7 +952,7 @@ form button:active {
   }
   .quantity-selector {
     border: solid #e2c7aa 0.1em;
-    width: 10vw;
+    width: 12vw;
     height: 3vh;
   }
   .mobile-quantity-selector {
