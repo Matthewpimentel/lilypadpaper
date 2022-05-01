@@ -108,7 +108,7 @@ const ProductInfo = () => {
                     <form>
                       <select
                         name="quantity"
-                        id="mobile-quantity"
+                        id="desktop-quantity-selector"
                         className="quantity-selector"
                         onChange={setQuantityMobile}
                       >
@@ -159,7 +159,7 @@ const ProductInfo = () => {
                       <form>
                         <select
                           name="quantity"
-                          id="mobile-quantity"
+                          id="mobile-quantity-selector"
                           onChange={setQuantityMobile}
                         >
                           <option value="1">1</option>
@@ -180,6 +180,9 @@ const ProductInfo = () => {
                       >
                         ADD TO CART
                       </button>
+                      <h3 className="product-info-added-to-cart">
+                        {addedToCart}
+                      </h3>
                     </div>
                     <div className="mobile-product-descriptions">
                       <p>{val.description}</p>
