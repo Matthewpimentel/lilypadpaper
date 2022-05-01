@@ -954,6 +954,7 @@ form button:active {
     border: solid #e2c7aa 0.1em;
     width: 12vw;
     height: 3vh;
+    background-color: white;
   }
   .mobile-quantity-selector {
     border-color: #e2c7aa;

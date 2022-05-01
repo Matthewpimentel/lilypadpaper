@@ -48,7 +48,7 @@ const Nav = () => {
             <AiOutlineMenu className="hamburger-icon" onClick={openMenu} />
           </li>
           <li>
-            <Link className="title-mobile" to="/" onClick={openMenu}>
+            <Link className="title-mobile" to="/">
               Lily Pad Paper & Co
             </Link>
           </li>
