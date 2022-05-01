@@ -64,7 +64,7 @@ const ProductInfo = () => {
           if (val.id == id) {
             return (
               <div key={i}>
-                <div className="flex-container" key={i}>
+                <div className="flex-container">
                   <div className="product-info-back-button">
                     <Link to="/shop">
                       <AiOutlineRollback size={40} />
@@ -74,11 +74,31 @@ const ProductInfo = () => {
                     id="product-image-active"
                     className="product-image-display"
                   >
-                    <img className="product-image-active" src={mainImage}></img>
+                    <img
+                      className="product-image-active"
+                      src={mainImage}
+                      alt={val.title}
+                      loading="lazy"
+                    ></img>
                     <div>
-                      <img onClick={changePicture} src={val.images[1]}></img>
-                      <img onClick={changePicture} src={val.images[2]}></img>
-                      <img onClick={changePicture} src={val.images[3]}></img>
+                      <img
+                        onClick={changePicture}
+                        alt={val.title}
+                        src={val.images[1]}
+                        loading="lazy"
+                      ></img>
+                      <img
+                        onClick={changePicture}
+                        alt={val.title}
+                        src={val.images[2]}
+                        loading="lazy"
+                      ></img>
+                      <img
+                        onClick={changePicture}
+                        alt={val.title}
+                        src={val.images[3]}
+                        loading="lazy"
+                      ></img>
                     </div>
                   </div>
                   <div className="product-info">
