@@ -27,7 +27,11 @@ const ProductInfo = () => {
   const addToCart = () => {
     if (cartItems != undefined) {
       for (let i = 0; i < cartItems.length; i++) {
-        if (cartItems.length != 0 && cart.length < itemsArray.length) {
+        if (
+          cartItems.length != 0 &&
+          cart.length < itemsArray.length &&
+          cartItems[i].id != id
+        ) {
           cart.push({ id: cartItems[i].id, quantity: cartItems[i].quantity });
         }
       }
@@ -59,7 +63,7 @@ const ProductInfo = () => {
         {itemsArray.map((val, i) => {
           if (val.id == id) {
             return (
-              <div>
+              <div key={i}>
                 <div className="flex-container" key={i}>
                   <div className="product-info-back-button">
                     <Link to="/shop">

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Image1 from "../Images/lily-grocery-4.webp";
-import Image2 from "../Images/lily-note-meal.webp";
-import Image3 from "../Images/lily-note-notepad.webp";
+import Image2 from "../Images/lily-notes-1.webp";
+import Image3 from "../Images/lily-planner-3.webp";
 const Home = () => {
   function readMore() {
     var x = document.getElementById("home-blurb-readmore");
