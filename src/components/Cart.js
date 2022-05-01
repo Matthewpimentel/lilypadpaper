@@ -10,13 +10,13 @@ const Cart = () => {
   const [cartFromStorageState, setCartFromStorageState] =
     useState(cartFromStorage);
 
-  const addToQuantity = (e) => {
+  const saveQuantity = (e) => {
     for (let i = 0; i < cartFromStorage.length; i++) {
       if (e.currentTarget.id == cartFromStorageState[i].id) {
+        var div = document.getElementById(e.currentTarget.id);
+        var quantitySelected = parseInt(div.value);
         const updateArray = [...cartFromStorageState];
-        if (updateArray[i].quantity < 10) {
-          updateArray[i].quantity += 1;
-        }
+        updateArray[i].quantity = quantitySelected;
         setCartFromStorageState(updateArray);
         localStorage.clear();
         localStorage.setItem("cart", JSON.stringify(updateArray));
@@ -86,6 +86,8 @@ const Cart = () => {
                           name="quantity"
                           className="quantity-selector"
                           defaultValue={cartFromStorage[i].quantity}
+                          onChange={saveQuantity}
+                          id={val.id}
                         >
                           <option value="1">1</option>
                           <option value="2">2</option>
