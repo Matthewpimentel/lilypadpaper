@@ -160,7 +160,7 @@ const ProductInfo = () => {
                     ></img>
                     <img onClick={changePicture} src={val.images[1]}></img>
                     <img onClick={changePicture} src={val.images[2]}></img>
-                    <img onClick={changePicture} src={val.images[2]}></img>
+                    <img onClick={changePicture} src={val.images[3]}></img>
                   </div>
                   <div className="product-info-mobile">
                     <h1>{val.title}</h1>
