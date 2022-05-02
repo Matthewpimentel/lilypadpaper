@@ -43,6 +43,9 @@ function App() {
           <Route path={"/success"}>
             <Success />
           </Route>
+          <Route path={"*"}>
+            <Home />
+          </Route>
         </Switch>
       </BrowserRouter>
       <Footer />
