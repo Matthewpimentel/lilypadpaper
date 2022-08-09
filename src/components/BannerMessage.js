@@ -3,7 +3,7 @@ const BannerMessage = () => {
   const [message, setMessage] = useState({
     id: 1,
     message:
-      "we believe that everday is a blank canvas, ready to be filled with life, love and beautiful things!",
+      "Back to school sale - 20% off all items",
   });
 
   return (

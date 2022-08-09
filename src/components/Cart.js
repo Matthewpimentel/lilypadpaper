@@ -1,35 +1,21 @@
 import { itemsArray } from "./Items.js";
-import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { FiTrash } from "react-icons/fi";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const Cart = () => {
   let cartFromStorage = JSON.parse(localStorage.getItem("cart"));
-  const [quantity, setQuantity] = useState(1);
 
   const [cartFromStorageState, setCartFromStorageState] =
     useState(cartFromStorage);
 
   const saveQuantity = (e) => {
-    for (let i = 0; i < cartFromStorage.length; i++) {
-      if (e.currentTarget.id == cartFromStorageState[i].id) {
-        var div = document.getElementById(e.currentTarget.id);
-        var quantitySelected = parseInt(div.value);
-        const updateArray = [...cartFromStorageState];
-        updateArray[i].quantity = quantitySelected;
-        setCartFromStorageState(updateArray);
-        localStorage.clear();
-        localStorage.setItem("cart", JSON.stringify(updateArray));
-      }
-    }
-  };
-
-  const subtractFromQuantity = (e) => {
-    for (let i = 0; i < cartFromStorage.length; i++) {
-      if (e.currentTarget.id == cartFromStorageState[i].id) {
-        const updateArray = [...cartFromStorageState];
-        if (updateArray[i].quantity > 1) {
-          updateArray[i].quantity -= 1;
+    if(cartFromStorage !== null){
+      for (let i = 0; i < cartFromStorage.length; i++) {
+        if (e.currentTarget.id == cartFromStorageState[i].id) {
+          var div = document.getElementById(e.currentTarget.id);
+          var quantitySelected = parseInt(div.value);
+          const updateArray = [...cartFromStorageState];
+          updateArray[i].quantity = quantitySelected;
           setCartFromStorageState(updateArray);
           localStorage.clear();
           localStorage.setItem("cart", JSON.stringify(updateArray));
@@ -39,31 +25,35 @@ const Cart = () => {
   };
 
   const removeItem = (e) => {
-    for (let i = 0; i < cartFromStorage.length; i++) {
-      if (e.currentTarget.id == cartFromStorageState[i].id) {
-        const updateArray = [...cartFromStorageState];
-        updateArray.splice(i, 1);
-        cartFromStorage.splice(i, 1);
-
-        setCartFromStorageState(updateArray);
-        localStorage.clear();
-        localStorage.setItem("cart", JSON.stringify(updateArray));
+    if(cartFromStorage !== null){
+      for (let i = 0; i < cartFromStorage.length; i++) {
+        if (e.currentTarget.id == cartFromStorageState[i].id) {
+          const updateArray = [...cartFromStorageState];
+          updateArray.splice(i, 1);
+          cartFromStorage.splice(i, 1);
+  
+          setCartFromStorageState(updateArray);
+          localStorage.clear();
+          localStorage.setItem("cart", JSON.stringify(updateArray));
+        }
       }
     }
   };
   const CartNotEmpty = () => {
-    if (cartFromStorage.length > 0) {
-      return (
-        <div className="cart-headers">
-          <h1 className="blank-margin"></h1>
-          <h1>Description</h1>
-          <h1>Quantity</h1>
-          <h1>Remove</h1>
-          <h1>Price</h1>
-        </div>
-      );
-    } else {
-      return <h1 style={{ textAlign: "center" }}>Cart Is Empty!</h1>;
+    if(cartFromStorage !== null){
+      if (cartFromStorage.length > 0) {
+        return (
+          <div className="cart-headers">
+            <h1 className="blank-margin"></h1>
+            <h1>Description</h1>
+            <h1>Quantity</h1>
+            <h1>Remove</h1>
+            <h1>Price</h1>
+          </div>
+        );
+      } else {
+        return <h1 style={{ textAlign: "center" }}>Cart Is Empty!</h1>;
+      }
     }
   };
 
@@ -73,6 +63,7 @@ const Cart = () => {
         <CartNotEmpty></CartNotEmpty>
 
         {itemsArray.map((val, i) => {
+          if(cartFromStorage !== null){
           if (localStorage.length > 0) {
             for (let i = 0; i < cartFromStorageState.length; i++) {
               if (cartFromStorageState[i].id == val.id) {
@@ -118,7 +109,7 @@ const Cart = () => {
           } else {
             return <h1></h1>;
           }
-        })}
+        }})}
       </div>
       <form
         method="POST"
