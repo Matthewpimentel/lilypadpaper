@@ -101,10 +101,10 @@ const Cart = () => {
                       size={40}
                     />
 
-                    <h1>ca${val.price * cartFromStorage[i].quantity}</h1>
+                    <h1>ca${(val.price * cartFromStorage[i].quantity).toFixed(2)}</h1>
                   </div>
                 );
-              }
+              } 
             }
           } else {
             return <h1></h1>;
