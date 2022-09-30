@@ -30,7 +30,7 @@ let notepad = new MakeItems(
   0,
   "lily notes, notepad",
   [blank1, blank2, blank3, blank4],
-  6.400,
+  8,
   "Add a bit of luxury and simplicity to your writing with our Lily Notes Notepad. The perfect size for writing down to do lists, goals, don’t forgets, personal reflection and much more + it makes a very thoughtful gift. ",
   "50 pages of high quality paper. 4” x 6”. Exclusive to Lily Pad Paper & Co."
 );
@@ -39,7 +39,7 @@ let mealPlanner = new MakeItems(
   1,
   "weekly meal planner",
   [meal1, meal2, meal3, meal4],
-  8,
+  10,
   "The Weekly Meal Planner is a simple and functional way to plan meals for you and your family. It makes planning meals easy - no more scrambling to figure out what’s for dinner!",
   "30 pages of high quality paper. 5” x 7”. Exclusive to Lily Pad Paper & Co. "
 );
@@ -48,7 +48,7 @@ let groceryList = new MakeItems(
   2,
   "grocery list",
   [grocery1, grocery2, grocery3, grocery4],
-  6.40,
+  8,
   "Pair our Grocery List with our Weekly Meal Planner - the ultimate duo!",
   "30 pages of high quality paper. 4” x 9”. Exclusive to Lily Pad Paper & Co."
 );
@@ -57,7 +57,7 @@ let weeklyPlanner = new MakeItems(
   3,
   "weekly planner",
   [planner1, planner2, planner3, planner4],
-  9.60,
+  12,
   "Your weekly schedule at a glance. Completely customizable to input your own dates. Use the focus section to write down your weekly focus - movement, mindfulness etc.",
   "30 pages of high quality paper. 10” x 8”. Exclusive to Lily Pad Paper & Co."
 );
