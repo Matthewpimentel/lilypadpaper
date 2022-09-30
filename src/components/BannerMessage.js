@@ -3,7 +3,7 @@ const BannerMessage = () => {
   const [message, setMessage] = useState({
     id: 1,
     message:
-      "Back to school sale - 20% off all items",
+      "",
   });
 
   return (
